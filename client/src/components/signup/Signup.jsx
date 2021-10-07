@@ -73,7 +73,7 @@ const Signup = () => {
 			</div>
 			<div className='form-floating mb-3'>
 				<input
-					type='text'
+					type='password'
 					className='form-control'
 					id='password'
 					name='password'

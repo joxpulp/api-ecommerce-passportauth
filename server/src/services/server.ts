@@ -28,7 +28,7 @@ app.use(
 	session({
 		store: connectMongo.create({ mongoUrl: CONFIG.MONGO_URL }),
 		secret: CONFIG.SECRET,
-		cookie: { sameSite: false, secure: 'auto', maxAge: 1000 * 120 },
+		cookie: { sameSite: 'none', secure: 'auto', maxAge: 1000 * 120 },
 		saveUninitialized: false,
 		resave: true,
 		rolling: true

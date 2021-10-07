@@ -2,7 +2,7 @@
 	"name": "desafio22",
 	"version": "1.0.0",
 	"description": "Front and Backend for a products API and a simple chatbox, made with React, Bootstrap, Express, Socket.io, and MongoDB.",
-	"main": "/dist/index.js",
+	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon",
 		"deploy": "git add . && git commit -m 'Heroku' && git push heroku HEAD:main",

@@ -15,13 +15,13 @@ function AppProvider({ children }) {
 	const [fetchIsLogged, setFetchIsLogged] = useState(true);
 	const [fetchLogout, setFetchLogout] = useState(false);
 
-	const URL = 'http://localhost:8080';
+	const URL = 'https://desafio25.herokuapp.com';
 
 	const { data: loginData, setData: setLoginData, loading: loadingLogin } = useFetch(fetchLogin && `${URL}/api/auth/login`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
-		credentials: 'include',
 		body: JSON.stringify(userLogin),
+		credentials: 'include',
 	});
 
 	const { data: signupData, loading: loadingSignup } = useFetch(
@@ -29,8 +29,8 @@ function AppProvider({ children }) {
 		{
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			credentials: 'include',
 			body: JSON.stringify(userSignup),
+			credentials: 'include',
 		}
 	);
 

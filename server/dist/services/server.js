@@ -46,7 +46,7 @@ app.use(cors_1.default({
 app.use(express_session_1.default({
     store: connect_mongo_1.default.create({ mongoUrl: config_1.CONFIG.MONGO_URL }),
     secret: config_1.CONFIG.SECRET,
-    cookie: { sameSite: false, secure: 'auto', maxAge: 1000 * 120 },
+    cookie: { sameSite: 'none', secure: 'auto', maxAge: 1000 * 120 },
     saveUninitialized: false,
     resave: true,
     rolling: true
