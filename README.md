@@ -1,6 +1,6 @@
 # express-socketio-fakerjs-mongodb-passport-local
 
-Backend for a products API, simple chatbox, and an endpoint with data mocking for test purposes, made with Express, Socket.io, Faker.js, and MongoDB.
+Backend for a products API, simple chatbox, and an endpoint with data mocking for test purposes, made with Express, Socket.io, Faker.js, MongoDB, and auth system using Passport and Passport-local
 
 Frontend: https://api-auth-passportlocal.netlify.app/
 
