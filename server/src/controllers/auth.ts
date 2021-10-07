@@ -38,7 +38,7 @@ class AuthController {
 		}
 	}
 
-	logout(req: Request, res: Response) {
+	logout(req: Request, res: Response ) {
 		if (req.user) {
 			req.logout();
 			return res.json({ msg: 'Session ended', logged: false });
