@@ -1,4 +1,4 @@
-# express-socketio-fakerjs-mongodb-sessions
+# express-socketio-fakerjs-mongodb-passport-local
 
 Backend for a products API, simple chatbox, and an endpoint with data mocking for test purposes, made with Express, Socket.io, Faker.js, and MongoDB.
 
