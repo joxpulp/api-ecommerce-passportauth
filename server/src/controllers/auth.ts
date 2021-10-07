@@ -8,7 +8,7 @@ class AuthController {
 			if (user) {
 				req.login(user, () => {
 					return res.json({
-						msg: `Login Succesful`,
+						msg: 'Login Succesful',
 						user: user.username,
 						logged: true,
 					});
