@@ -12,13 +12,16 @@ export const useFetch = (url, headers) => {
 			try {
 				setLoading(true);
 				const response = await fetch(url, headers);
+				const data = await response.json();
 				if (response.status === 200) {
-					const data = await response.json();
-					setData({ data: data, fetched: true });
+					setData({ data, fetched: true });
+					setLoading(false);
+				} else {
+					setData({ data, fetched: false });
 					setLoading(false);
 				}
 			} catch (error) {
-				console.log(error.message)
+				console.log(error.message);
 				setLoading(false);
 				setData({ fetched: false });
 				throw error;

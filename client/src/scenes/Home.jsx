@@ -7,11 +7,9 @@ import { useHistory } from 'react-router-dom';
 
 const Home = ({ socket }) => {
 	const {
-		userName,
+		userLogin,
 		setLogoutMessage,
 		setFetchLogout,
-		setFetchLogin,
-		fetchLogin,
 		setLoginData,
 		setLoggedData,
 	} = useContext(AppContext);
@@ -26,18 +24,10 @@ const Home = ({ socket }) => {
 		// history.push('/login');
 	};
 
-	useEffect(() => {
-		setFetchLogin(false);
-	}, [fetchLogin]);
-
-	useEffect(() => {
-		localStorage.setItem('user', JSON.stringify(userName));
-	}, [userName]);
-
 	return (
 		<>
 			<div className='container alert alert-success text-center' role='alert'>
-				Bienvenido {userName}
+				Bienvenido {userLogin.username}
 				<button className='btn btn-warning ms-2' onClick={handleLogout}>
 					Salir
 				</button>

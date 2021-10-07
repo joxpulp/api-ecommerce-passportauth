@@ -7,10 +7,14 @@ class AuthController {
 			if (err) return next(err);
 			if (user) {
 				req.login(user, () => {
-					return res.json({ msg: `Welcome: ${user.username}` });
+					return res.json({
+						msg: `Login Succesful`,
+						user: user.username,
+						logged: true,
+					});
 				});
 			} else {
-				return res.status(401).json({ ...info });
+				return res.status(401).json({ ...info, logged: false });
 			}
 		})(req, res, next);
 	}
@@ -19,7 +23,7 @@ class AuthController {
 		passport.authenticate('signup', (err, user, info) => {
 			if (err) return next(err);
 			if (user) {
-				return res.json(user);
+				return res.json({msg: 'User created'});
 			} else {
 				return res.status(401).json({ ...info });
 			}

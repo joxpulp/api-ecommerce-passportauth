@@ -4,58 +4,69 @@ import { useFetch } from '../hook/useFetch';
 export const AppContext = createContext();
 
 function AppProvider({ children }) {
-	const [userName, setUserName] = useState(
-		JSON.parse(localStorage.getItem('user'))
-	);
-	const [fetchLogin, setFetchLogin] = useState(false);
-	const [fetchIsLogged, setFetchIsLogged] = useState(true);
-	const [fetchLogout, setFetchLogout] = useState(false)
+	const [userLogin, setUserLogin] = useState({});
+	const [userSignup, setUserSignup] = useState({});
 	const [products, setProducts] = useState([]);
 	const [messages, setMessages] = useState([]);
 	const [logoutMessage, setLogoutMessage] = useState(false);
 
-	const { data: loginData, setData: setLoginData } = useFetch(
-		fetchLogin && 'https://desafio24.herokuapp.com/api/auth/login',
+	const [fetchLogin, setFetchLogin] = useState(false);
+	const [fetchSignup, setFetchSignup] = useState(false);
+	const [fetchIsLogged, setFetchIsLogged] = useState(true);
+	const [fetchLogout, setFetchLogout] = useState(false);
+
+	const URL = 'http://localhost:8080';
+
+	const { data: loginData, setData: setLoginData, loading: loadingLogin } = useFetch(fetchLogin && `${URL}/api/auth/login`, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		credentials: 'include',
+		body: JSON.stringify(userLogin),
+	});
+
+	const { data: signupData, loading: loadingSignup } = useFetch(
+		fetchSignup && `${URL}/api/auth/signup`,
 		{
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ username: userName }),
 			credentials: 'include',
+			body: JSON.stringify(userSignup),
 		}
 	);
 
-	const { data: loggedData, setData: setLoggedData } = useFetch(
-		fetchIsLogged && 'https://desafio24.herokuapp.com/api/auth/islogged',
-		{ credentials: 'include' }
-	);
+	const { data: loggedData, setData: setLoggedData } = useFetch( fetchIsLogged && `${URL}/api/auth/islogged`, { credentials: 'include' });
 
-	const { data: loggout } = useFetch(
-		fetchLogout && 'https://desafio24.herokuapp.com/api/auth/logout',
-		{ credentials: 'include' }
-	);
+	const { data: loggout } = useFetch(fetchLogout && `${URL}/api/auth/logout`, { credentials: 'include' });
 
 	return (
 		<AppContext.Provider
-			value={{
-				userName,
-				setUserName,
+			value={{ 
+				userLogin, 
+				setUserLogin, 
+				products, 
+				setProducts, 
+				messages, 
+				setMessages, 
+				logoutMessage, 
+				setLogoutMessage, 
+				loginData, 
+				setLoginData, 
+				loadingLogin, 
+				signupData,
+				loadingSignup,
+				loggedData,
+				setLoggedData,
+				loggout,
+				userSignup,
+				setUserSignup,
 				fetchLogin,
 				setFetchLogin,
-				loginData,
-				loggedData,
-				setFetchIsLogged,
 				fetchIsLogged,
-				products,
-				setProducts,
-				messages,
-				setMessages,
-				logoutMessage,
-				setLogoutMessage,
+				setFetchIsLogged,
 				fetchLogout,
 				setFetchLogout,
-				loggout,
-				setLoggedData,
-				setLoginData,
+				fetchSignup,
+				setFetchSignup,
 			}}
 		>
 			{children}

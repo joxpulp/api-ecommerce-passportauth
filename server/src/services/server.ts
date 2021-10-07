@@ -28,7 +28,7 @@ app.use(
 	session({
 		store: connectMongo.create({ mongoUrl: CONFIG.MONGO_URL }),
 		secret: CONFIG.SECRET,
-		cookie: { sameSite: 'none', secure: 'auto', maxAge: 1000 * 120 },
+		cookie: { sameSite: false, secure: 'auto', maxAge: 1000 * 120 },
 		saveUninitialized: false,
 		resave: true,
 		rolling: true
@@ -36,7 +36,6 @@ app.use(
 );
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(flash())
 app.use(express.json()); // Indica que el body viene como JSON
 app.use(express.urlencoded({ extended: true })); // Indica que el body puede tener un informacion como no string
 app.get('/', (req: Request, res: Response) => {

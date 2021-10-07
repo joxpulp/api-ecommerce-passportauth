@@ -1,24 +1,19 @@
 import React, { useContext, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { AppContext } from './context/AppContext';
 import { socket } from './services/socket/socket';
 import Login from './components/login/Login';
 import Home from './scenes/Home';
-import { Switch, useLocation } from 'react-router';
-import PrivateRoute from './router/PrivateRoute';
-import PublicRoute from './router/PublicRoute';
+import { Redirect, Switch, Route } from 'react-router-dom';
+import Signup from './components/signup/Signup';
 
 function App() {
-	const {
-		loginData,
-		products,
-		setProducts,
-		messages,
-		setMessages,
-		loggedData,
-	} = useContext(AppContext);
+	const { loginData, products, setProducts, messages, setMessages, loggedData, setFetchIsLogged } = useContext(AppContext);
 	const isAuth = loginData.data.logged || loggedData.data.logged;
-	console.log(isAuth);
+
+	useEffect(() => {
+		setFetchIsLogged(true);
+	}, []);
 
 	useEffect(() => {
 		socket.on('products', (data) => {
@@ -38,8 +33,6 @@ function App() {
 		};
 	}, [messages]);
 
-	// const location = useLocation();
-
 	return (
 		<motion.div
 			style={{ height: '100%' }}
@@ -56,10 +49,17 @@ function App() {
 				Bienvenido a la API de Productos
 			</motion.h1>
 			<hr style={{ backgroundColor: 'white', width: '80%' }} />
-				<Switch>
-					<PublicRoute path='/login' component={Login} isAuth={isAuth} />
-					<PrivateRoute exact path='/' component={Home} isAuth={isAuth} />
-				</Switch>
+			<Switch>
+				<Route exact path='/login'>
+					{!isAuth ? <Login /> : <Redirect to='/' />}
+				</Route>
+				<Route path='/signup'>
+					{!isAuth ? <Signup /> : <Redirect to='/' />}
+				</Route>
+				<Route exact path='/'>
+					{isAuth ? <Home /> : <Redirect to='/login' />}
+				</Route>
+			</Switch>
 		</motion.div>
 	);
 }
