@@ -13,16 +13,29 @@ Backend: https://desafio25.herokuapp.com/
 Auth:
 | Method | Route | Description |
 | ------------- |:-------------:| -----:|
-| GET |https://desafio25.herokuapp.com/api/auth/islogged/ |Check if the user is logged, returns a boolean |
 | POST |https://desafio25.herokuapp.com/api/auth/login | Login by passing JSON Body |
+| POST |https://desafio25.herokuapp.com/api/auth/signup | Signup by passing JSON Body |
+| GET |https://desafio25.herokuapp.com/api/auth/islogged/ |Check if the user is logged, returns a boolean |
 | GET |https://desafio25.herokuapp.com/api/auth/logout/ |Logout the current session |
 
-Auth JSON Body template:
+Login JSON Body template:
 
 ```Typescript
 {
     "username": "string",
     "password": "string"
+}
+```
+
+Signup JSON Body template:
+
+```Typescript
+{
+    "username": "string",
+    "password": "string",
+    "name": "string",
+    "lastname": "string",
+    "email": "string"
 }
 ```
 ##
