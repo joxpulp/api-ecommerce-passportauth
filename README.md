@@ -13,8 +13,7 @@ Backend: https://desafio27.herokuapp.com/
 Auth:
 | Method | Route | Description |
 | ------------- |:-------------:| -----:|
-| POST |https://desafio27.herokuapp.com/api/auth/login | Login by passing JSON Body |
-| POST |https://desafio27.herokuapp.com/api/auth/signup | Signup by passing JSON Body |
+| GET |https://desafio27.herokuapp.com/api/auth/facebook-login | Redirects to Facebook to login |
 | GET |https://desafio27.herokuapp.com/api/auth/islogged/ |Check if the user is logged, returns a boolean |
 | GET |https://desafio27.herokuapp.com/api/auth/logout/ |Logout the current session |
 
