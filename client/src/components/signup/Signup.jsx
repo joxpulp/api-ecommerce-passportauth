@@ -2,13 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { motion } from 'framer-motion';
+import { useForm } from '../../hook/useForm';
 
 const Signup = () => {
-	const [username, setUsername] = useState('');
-	const [password, setPassword] = useState('');
-	const [name, setName] = useState('');
-	const [lastname, setLastname] = useState('');
-	const [email, setEmail] = useState('');
+	const [{ username, password, name, lastname, email }, handleInputChange] =
+		useForm({ username: '', password: '', name: '', lastname: '', email: '' });
 
 	const {
 		setUserSignup,
@@ -19,6 +17,7 @@ const Signup = () => {
 	} = useContext(AppContext);
 
 	const history = useHistory();
+	
 	const signup = (e) => {
 		e.preventDefault();
 		setUserSignup({ username, password, name, lastname, email });
@@ -62,11 +61,10 @@ const Signup = () => {
 				<input
 					type='text'
 					className='form-control'
-					id='username'
 					name='username'
 					placeholder='username'
 					value={username}
-					onChange={(e) => setUsername(e.target.value)}
+					onChange={handleInputChange}
 					required
 				/>
 				<label htmlFor='username'>Username</label>
@@ -75,11 +73,10 @@ const Signup = () => {
 				<input
 					type='password'
 					className='form-control'
-					id='password'
 					name='password'
 					placeholder='password'
 					value={password}
-					onChange={(e) => setPassword(e.target.value)}
+					onChange={handleInputChange}
 					required
 				/>
 				<label htmlFor='password'>Contrasena</label>
@@ -88,11 +85,10 @@ const Signup = () => {
 				<input
 					type='text'
 					className='form-control'
-					id='name'
 					name='name'
 					placeholder='name'
 					value={name}
-					onChange={(e) => setName(e.target.value)}
+					onChange={handleInputChange}
 					required
 				/>
 				<label htmlFor='name'>Nombre</label>
@@ -101,11 +97,10 @@ const Signup = () => {
 				<input
 					type='text'
 					className='form-control'
-					id='lastname'
 					name='lastname'
 					placeholder='lastname'
 					value={lastname}
-					onChange={(e) => setLastname(e.target.value)}
+					onChange={handleInputChange}
 					required
 				/>
 				<label htmlFor='lastname'>Apellido</label>
@@ -114,11 +109,10 @@ const Signup = () => {
 				<input
 					type='text'
 					className='form-control'
-					id='email'
 					name='email'
 					placeholder='email'
 					value={email}
-					onChange={(e) => setEmail(e.target.value)}
+					onChange={handleInputChange}
 					required
 				/>
 				<label htmlFor='email'>Email</label>
@@ -126,7 +120,11 @@ const Signup = () => {
 			<button className='btn btn-success me-2' type='submit'>
 				Registrarse
 			</button>
-			<button className='btn btn-secondary' onClick={()=> history.push('/login')} type='button'>
+			<button
+				className='btn btn-secondary'
+				onClick={() => history.push('/login')}
+				type='button'
+			>
 				Volver al login
 			</button>
 		</form>

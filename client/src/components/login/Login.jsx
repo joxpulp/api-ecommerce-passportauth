@@ -1,18 +1,37 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { AppContext } from '../../context/AppContext';
 import { motion } from 'framer-motion';
 import { useHistory } from 'react-router-dom';
+import { useForm } from '../../hook/useForm';
+import {loginAuth} from '../../actions/authActions'
 
 function Login() {
-	const [username, setUsername] = useState('');
-	const [password, setPassword] = useState('');
-	const { setUserLogin, setFetchLogin, logoutMessage, setLogoutMessage, fetchLogin, loginData, loadingLogin } = useContext(AppContext);
+	const [{ username, password }, handleInputChange] = useForm({
+		username: '',
+		password: '',
+	});
+
+	const {
+		setUserLogin,
+		setFetchLogin,
+		logoutMessage,
+		setLogoutMessage,
+		fetchLogin,
+		loginData,
+		loadingLogin,
+	} = useContext(AppContext);
+
 	const history = useHistory();
+
+	// Dispatch an action to the reducer
+	const dispatch = useDispatch();
 
 	const login = (e) => {
 		e.preventDefault();
 		setUserLogin({ username, password });
-		setFetchLogin(true);
+		dispatch( loginAuth(username, password) )
+		// setFetchLogin(true);
 		history.push('/');
 	};
 
@@ -40,10 +59,10 @@ function Login() {
 				</motion.div>
 			) : (
 				<>
-					{(loginData.data.error && !loadingLogin) && (
+					{loginData.data.error && !loadingLogin && (
 						<motion.div
-							initial={{ opacity: 0}}
-							animate={{ opacity: 1}}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
 							exit={{ opacity: 0, y: '-100%' }}
 							className='container alert alert-danger text-center'
 							role='alert'
@@ -56,11 +75,10 @@ function Login() {
 						<input
 							type='text'
 							className='form-control'
-							id='username'
 							name='username'
 							placeholder='username'
 							value={username}
-							onChange={(e) => setUsername(e.target.value)}
+							onChange={handleInputChange}
 							required
 							autoFocus
 						/>
@@ -70,11 +88,10 @@ function Login() {
 						<input
 							type='password'
 							className='form-control'
-							id='password'
 							name='password'
 							placeholder='password'
 							value={password}
-							onChange={(e) => setPassword(e.target.value)}
+							onChange={handleInputChange}
 							required
 							autoFocus
 						/>
@@ -83,7 +100,10 @@ function Login() {
 					<button className='btn btn-success me-3' type='submit'>
 						Ingresar
 					</button>
-					<button className='btn btn-secondary' onClick={()=> history.push('/signup')}>
+					<button
+						className='btn btn-secondary'
+						onClick={() => history.push('/signup')}
+					>
 						Registrarse
 					</button>
 				</>
