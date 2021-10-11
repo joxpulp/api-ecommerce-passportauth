@@ -4,8 +4,7 @@ import * as http from 'http';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import session from 'express-session';
-import passport from '../middlewares/auth'
-import flash from 'connect-flash'
+import passport from '../middlewares/facebook-auth'
 import connectMongo from 'connect-mongo';
 import { mongoose } from '../db/mongoose';
 import apiRouter from '../routes/index';

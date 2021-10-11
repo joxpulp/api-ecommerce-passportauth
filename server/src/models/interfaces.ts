@@ -21,6 +21,13 @@ export interface User {
 	isValidPassword(password: string): Promise<boolean>
 }
 
+export interface ReqUser {
+	_id?: string;
+	displayName?: string;
+	photos?: object[];
+}
+
+
 declare module 'express-session' {
 	interface Session {
 		loggedIn: boolean;

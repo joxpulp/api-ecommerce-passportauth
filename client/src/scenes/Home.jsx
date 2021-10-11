@@ -12,6 +12,7 @@ const Home = ({ socket }) => {
 		setFetchLogout,
 		setLoginData,
 		setLoggedData,
+		loggedData,
 	} = useContext(AppContext);
 
 	const history = useHistory();
@@ -27,8 +28,14 @@ const Home = ({ socket }) => {
 	return (
 		<>
 			<div className='container alert alert-success text-center' role='alert'>
-				Bienvenido {userLogin.username}
-				<button className='btn btn-warning ms-2' onClick={handleLogout}>
+				<div>
+					<h2>
+						Bienvenido {userLogin.username || loggedData.data.user.displayName}
+					</h2>
+					<h4>{loggedData.data.user.emails[0].value}</h4>
+					<img src={loggedData.data.user.photos[0].value} alt='' />
+				</div>
+				<button className='btn btn-warning my-2' onClick={handleLogout}>
 					Salir
 				</button>
 			</div>

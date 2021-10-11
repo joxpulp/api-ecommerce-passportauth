@@ -10,7 +10,7 @@ import Signup from './components/signup/Signup';
 function App() {
 	const { loginData, products, setProducts, messages, setMessages, loggedData, setFetchIsLogged } = useContext(AppContext);
 	const isAuth = loginData.data.logged || loggedData.data.logged;
-
+console.log(isAuth)
 	useEffect(() => {
 		setFetchIsLogged(true);
 	}, []);

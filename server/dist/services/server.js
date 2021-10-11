@@ -28,7 +28,7 @@ var http = __importStar(require("http"));
 var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var cors_1 = __importDefault(require("cors"));
 var express_session_1 = __importDefault(require("express-session"));
-var auth_1 = __importDefault(require("../middlewares/auth"));
+var facebook_auth_1 = __importDefault(require("../middlewares/facebook-auth"));
 var connect_mongo_1 = __importDefault(require("connect-mongo"));
 var mongoose_1 = require("../db/mongoose");
 var index_1 = __importDefault(require("../routes/index"));
@@ -51,8 +51,8 @@ app.use(express_session_1.default({
     resave: true,
     rolling: true
 }));
-app.use(auth_1.default.initialize());
-app.use(auth_1.default.session());
+app.use(facebook_auth_1.default.initialize());
+app.use(facebook_auth_1.default.session());
 app.use(express_1.default.json()); // Indica que el body viene como JSON
 app.use(express_1.default.urlencoded({ extended: true })); // Indica que el body puede tener un informacion como no string
 app.get('/', function (req, res) {

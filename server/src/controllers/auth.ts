@@ -1,38 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
-import passport from '../middlewares/auth';
 
 class AuthController {
-	login(req: Request, res: Response, next: NextFunction) {
-		passport.authenticate('login', (err, user, info) => {
-			if (err) return next(err);
-			if (user) {
-				req.login(user, () => {
-					return res.json({
-						msg: 'Login Succesful',
-						user: user.username,
-						logged: true,
-					});
-				});
-			} else {
-				return res.status(401).json({ ...info, logged: false });
-			}
-		})(req, res, next);
-	}
-
-	signup(req: Request, res: Response, next: NextFunction) {
-		passport.authenticate('signup', (err, user, info) => {
-			if (err) return next(err);
-			if (user) {
-				return res.json({msg: 'User created'});
-			} else {
-				return res.status(401).json({ ...info });
-			}
-		})(req, res, next);
-	}
-
+	
 	isLogged(req: Request, res: Response) {
 		if (req.user) {
-			return res.json({ logged: true });
+			return res.json({ logged: true, user: req.user });
 		} else {
 			return res.status(404).json({ logged: false });
 		}

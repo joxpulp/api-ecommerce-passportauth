@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { productController } from '../controllers/products';
-import { authController } from '../controllers/auth';
-import { isAuth } from '../middlewares/auth';
+import { isAuth } from '../middlewares/facebook-auth';
 
 const router = Router();
 
