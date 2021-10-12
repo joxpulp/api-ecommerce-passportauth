@@ -2,10 +2,7 @@
 
 Backend for a products API, simple chatbox, and an endpoint with data mocking for test purposes, made with Express, Socket.io, Faker.js, MongoDB, and auth system using Passport and Passport-local
 
-Frontend: https://api-auth-passportlocal.netlify.app/
-
-Backend: https://desafio25.herokuapp.com/
-
+Frontend and Backend: https://desafio25.herokuapp.com/
 ## Endpoints:
 
 ##
