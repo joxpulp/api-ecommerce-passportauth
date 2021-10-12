@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
-import { socket } from '../../services/socket/socket';
 import { AppContext } from '../../context/AppContext';
 
-
 function ProductTable() {
-		const { products } = useContext(AppContext);
+	const { products } = useContext(AppContext);
 
 	return (
 		<div className='container'>

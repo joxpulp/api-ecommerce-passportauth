@@ -58,8 +58,8 @@ app.use(auth_1.default.session());
 app.use(express_1.default.json()); // Indica que el body viene como JSON
 app.use(express_1.default.urlencoded({ extended: true })); // Indica que el body puede tener un informacion como no string
 app.use('/api', index_1.default);
-app.get('*', function (req, res) {
-    var indexHtml = path_1.default.resolve('../../public/index.html');
+app.get('/*', function (req, res) {
+    var indexHtml = path_1.default.resolve('public/index.html');
     res.sendFile(indexHtml);
 });
 exports.default = server;

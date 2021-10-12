@@ -6,7 +6,15 @@ import { useHistory } from 'react-router-dom';
 function Login() {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
-	const { setUserLogin, setFetchLogin, logoutMessage, setLogoutMessage, fetchLogin, loginData, loadingLogin } = useContext(AppContext);
+	const {
+		setUserLogin,
+		setFetchLogin,
+		logoutMessage,
+		setLogoutMessage,
+		fetchLogin,
+		loginData,
+		loadingLogin,
+	} = useContext(AppContext);
 	const history = useHistory();
 
 	const login = (e) => {
@@ -40,10 +48,10 @@ function Login() {
 				</motion.div>
 			) : (
 				<>
-					{(loginData.data.error && !loadingLogin) && (
+					{loginData.data.error && !loadingLogin && (
 						<motion.div
-							initial={{ opacity: 0}}
-							animate={{ opacity: 1}}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
 							exit={{ opacity: 0, y: '-100%' }}
 							className='container alert alert-danger text-center'
 							role='alert'
@@ -83,7 +91,10 @@ function Login() {
 					<button className='btn btn-success me-3' type='submit'>
 						Ingresar
 					</button>
-					<button className='btn btn-secondary' onClick={()=> history.push('/signup')}>
+					<button
+						className='btn btn-secondary'
+						onClick={() => history.push('/signup')}
+					>
 						Registrarse
 					</button>
 				</>

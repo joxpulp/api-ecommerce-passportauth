@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import AddProduct from '../components/addproduct/AddProduct';
 import ChatBox from '../components/chatbox/ChatBox';
 import ProductTable from '../components/producttable/ProductTable';
 import { AppContext } from '../context/AppContext';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
-const Home = ({ socket }) => {
+const Home = () => {
 	const {
 		userLogin,
 		setLogoutMessage,
@@ -14,7 +14,7 @@ const Home = ({ socket }) => {
 		setLoggedData,
 	} = useContext(AppContext);
 
-	const history = useHistory();
+	// const history = useHistory();
 
 	const handleLogout = () => {
 		setLogoutMessage(true);
@@ -32,11 +32,11 @@ const Home = ({ socket }) => {
 					Salir
 				</button>
 			</div>
-			<AddProduct socket={socket} />
+			<AddProduct />
 			<hr style={{ backgroundColor: 'white', width: '80%' }} />
-			<ProductTable socket={socket} />
+			<ProductTable />
 			<hr style={{ backgroundColor: 'white', width: '80%' }} />
-			<ChatBox socket={socket} />
+			<ChatBox />
 		</>
 	);
 };

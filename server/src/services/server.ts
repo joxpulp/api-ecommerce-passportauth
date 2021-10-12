@@ -41,8 +41,8 @@ app.use(passport.session())
 app.use(express.json()); // Indica que el body viene como JSON
 app.use(express.urlencoded({ extended: true })); // Indica que el body puede tener un informacion como no string
 app.use('/api', apiRouter);
-app.get('*', (req: Request, res: Response) => {
-	const indexHtml = path.resolve('../../public/index.html');
+app.get('/*', (req: Request, res: Response) => {
+	const indexHtml = path.resolve('public/index.html');
 	res.sendFile(indexHtml);
 });
 
