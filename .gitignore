@@ -6,4 +6,4 @@ dist-ssr
 .eslintcache
 .eslintrc.json
 .env
-/server/dist
+dist
