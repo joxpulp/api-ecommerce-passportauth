@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import AddProduct from '../components/addproduct/AddProduct';
 import ChatBox from '../components/chatbox/ChatBox';
 import ProductTable from '../components/producttable/ProductTable';
 import { AppContext } from '../context/AppContext';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 const Home = ({ socket }) => {
 	const {
@@ -14,7 +14,7 @@ const Home = ({ socket }) => {
 		setLoggedData,
 	} = useContext(AppContext);
 
-	const history = useHistory();
+	// const history = useHistory();
 
 	const handleLogout = () => {
 		setLogoutMessage(true);

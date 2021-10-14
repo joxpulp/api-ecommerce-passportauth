@@ -58,7 +58,7 @@ function AddProduct() {
 				/>
 				<label htmlFor='thumbnail'>URL de la imagen</label>
 			</div>
-			<button className='btn btn-success' type='submit' >
+			<button className='btn btn-success' type='submit'>
 				Ingresar producto
 			</button>
 		</form>

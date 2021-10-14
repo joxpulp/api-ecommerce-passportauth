@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { motion } from 'framer-motion';
@@ -17,7 +17,7 @@ const Signup = () => {
 	} = useContext(AppContext);
 
 	const history = useHistory();
-	
+
 	const signup = (e) => {
 		e.preventDefault();
 		setUserSignup({ username, password, name, lastname, email });
@@ -27,7 +27,7 @@ const Signup = () => {
 
 	useEffect(() => {
 		setFetchSignup(false);
-	}, [fetchSignup]);
+	}, [fetchSignup, setFetchSignup]);
 
 	return (
 		<form id='form' onSubmit={signup}>

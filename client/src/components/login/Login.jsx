@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { AppContext } from '../../context/AppContext';
+import { useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
 import { useHistory } from 'react-router-dom';
 import { useForm } from '../../hook/useForm';
-import {loginAuth} from '../../actions/authActions'
+import { loginAuth, logoutThunk } from '../../actions/authActions';
 
 function Login() {
 	const [{ username, password }, handleInputChange] = useForm({
@@ -30,20 +30,20 @@ function Login() {
 	const login = (e) => {
 		e.preventDefault();
 		setUserLogin({ username, password });
-		dispatch( loginAuth(username, password) )
+		dispatch(loginAuth(username, password));
 		// setFetchLogin(true);
 		history.push('/');
 	};
 
 	useEffect(() => {
 		setFetchLogin(false);
-	}, [fetchLogin]);
+	}, [fetchLogin, setFetchLogin]);
 
 	useEffect(() => {
 		setTimeout(() => {
 			setLogoutMessage(false);
 		}, 2000);
-	}, [logoutMessage]);
+	}, [logoutMessage, setLogoutMessage]);
 
 	return (
 		<motion.form id='form' onSubmit={login}>
@@ -102,7 +102,7 @@ function Login() {
 					</button>
 					<button
 						className='btn btn-secondary'
-						onClick={() => history.push('/signup')}
+						onClick={() => dispatch(logoutThunk())}
 					>
 						Registrarse
 					</button>

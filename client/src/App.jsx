@@ -21,7 +21,7 @@ function App() {
 
 	useEffect(() => {
 		setFetchIsLogged(true);
-	}, []);
+	}, [setFetchIsLogged]);
 
 	useEffect(() => {
 		socket.on('products', (data) => {
@@ -30,7 +30,7 @@ function App() {
 		return () => {
 			socket.off('products');
 		};
-	}, [products]);
+	}, [products, setProducts]);
 
 	useEffect(() => {
 		socket.on('messages', (data) => {
@@ -39,7 +39,7 @@ function App() {
 		return () => {
 			socket.off('messages');
 		};
-	}, [messages]);
+	}, [messages, setMessages]);
 
 	return (
 		<motion.div

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { AppContext } from '../../context/AppContext';
 import { socket } from '../../services/socket/socket';
@@ -83,7 +83,7 @@ function ChatBox() {
 						placeholder='message'
 						value={message}
 						disabled={
-							!/^[\a-z0-9._-]+@{1}[\\a-z0-9.]+\.[a-z]{2,3}$/.test(email)
+							!/^[a-z0-9._-]+@{1}[\\a-z0-9.]+\.[a-z]{2,3}$/.test(email)
 						}
 						onChange={(e) => setMessage(e.target.value)}
 						onKeyUp={(e) => e.key === 'Enter' && sendMessage()}
@@ -93,7 +93,7 @@ function ChatBox() {
 					<button
 						className='btn btn-success ms-2'
 						disabled={
-							!/^[\a-z0-9._-]+@{1}[\\a-z0-9.]+\.[a-z]{2,3}$/.test(email)
+							!/^[a-z0-9._-]+@{1}[\\a-z0-9.]+\.[a-z]{2,3}$/.test(email)
 						}
 						type='submit'
 					>
