@@ -7,7 +7,7 @@ import { messages } from '../models/messageschema';
 export const ioServer = (server: http.Server) => {
 	const io = new Server(server);
 	io.on('connection', async (socket) => {
-		console.log('Client Connected OK');
+		console.log('Client Connected OKs');
 
 		try {
 			socket.on('addProduct', async (product) => {
