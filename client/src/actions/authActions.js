@@ -16,6 +16,14 @@ export const login = (username, logged) => {
 	};
 };
 
+export const logout = (logged) => {
+	return {
+		type: types.logout,
+		payload: {
+			logged,
+		},
+	};
+};
 
 export const loginAuth = (username, password) => {
 	return async (dispatch) => {
@@ -25,14 +33,6 @@ export const loginAuth = (username, password) => {
 	};
 };
 
-export const logout = (logged) => {
-	return {
-		type: types.logout,
-		payload: {
-			logged,
-		},
-	};
-};
 
 export const logoutThunk = () => {
 	return async (dispatch) => {
