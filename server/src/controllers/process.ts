@@ -1,9 +1,7 @@
 import { Request, Response } from 'express';
 import path from 'path';
-import { fork } from 'child_process';
+import os from 'os';
 import { randomNumbers } from '../utils/randoms';
-
-const scriptPath = path.resolve(__dirname, '../utils/randoms.js');
 
 class ProcessController {
 	info(req: Request, res: Response) {
@@ -15,16 +13,13 @@ class ProcessController {
 			execPath: process.execPath,
 			processId: process.pid,
 			currentDirectory: process.cwd(),
+			processorsNum: os.cpus().length,
 		});
 	}
 
 	randoms(req: Request, res: Response) {
 		const { cant } = req.query;
-		const computo = fork(scriptPath);
-		computo.send(Number(cant) || 100000000);
-		computo.on('message', (result) => {
-			res.json(result);
-		});
+		res.json({ result: randomNumbers(Number(cant) || 10000) });
 	}
 }
 

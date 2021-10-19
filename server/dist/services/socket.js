@@ -48,7 +48,7 @@ var ioServer = function (server) {
         return __generator(this, function (_g) {
             switch (_g.label) {
                 case 0:
-                    console.log('Client Connected');
+                    console.log('Client Connected Ya');
                     _g.label = 1;
                 case 1:
                     _g.trys.push([1, 4, , 5]);

@@ -13,10 +13,3 @@ export const randomNumbers = (cant: number) => {
 
 	return countRepeated;
 };
-
-process.on('message', (cant: number) => {
-	const random = randomNumbers(cant);
-	if (process && process.send) {
-		process.send(random);
-	}
-});

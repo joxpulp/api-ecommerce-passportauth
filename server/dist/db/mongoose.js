@@ -45,7 +45,7 @@ var mongoose = function () { return __awaiter(void 0, void 0, void 0, function (
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, mongoose_1.connect(config_1.CONFIG.MONGO_URL)];
+                return [4 /*yield*/, (0, mongoose_1.connect)(config_1.CONFIG.MONGO_URL)];
             case 1:
                 _a.sent();
                 console.log('Conectado a base de datos');

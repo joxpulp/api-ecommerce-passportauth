@@ -23,9 +23,3 @@ var randomNumbers = function (cant) {
     return countRepeated;
 };
 exports.randomNumbers = randomNumbers;
-process.on('message', function (cant) {
-    var random = exports.randomNumbers(cant);
-    if (process && process.send) {
-        process.send(random);
-    }
-});
