@@ -15,7 +15,7 @@ function AppProvider({ children }) {
 	const [fetchIsLogged, setFetchIsLogged] = useState(true);
 	const [fetchLogout, setFetchLogout] = useState(false);
 
-	const URL = 'https://desafio25.herokuapp.com';
+	const URL = 'http://localhost:8080';
 
 	const { data: loginData, setData: setLoginData, loading: loadingLogin } = useFetch(fetchLogin && `${URL}/api/auth/login`, {
 		method: 'POST',
@@ -33,8 +33,6 @@ function AppProvider({ children }) {
 			credentials: 'include',
 		}
 	);
-
-	const { data: loggedData, setData: setLoggedData } = useFetch( fetchIsLogged && `${URL}/api/auth/islogged`, { credentials: 'include' });
 
 	const { data: loggout } = useFetch(fetchLogout && `${URL}/api/auth/logout`, { credentials: 'include' });
 
@@ -54,8 +52,6 @@ function AppProvider({ children }) {
 				loadingLogin, 
 				signupData,
 				loadingSignup,
-				loggedData,
-				setLoggedData,
 				loggout,
 				userSignup,
 				setUserSignup,

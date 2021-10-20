@@ -6,6 +6,7 @@ const apiAuth = axios.create({
 	withCredentials: true,
 });
 
+//* AUTH ACTION CREATORS SYNCRONOUS 
 export const login = (username, logged) => {
 	return {
 		type: types.login,
@@ -25,7 +26,17 @@ export const logout = (logged) => {
 	};
 };
 
-export const loginAuth = (username, password) => {
+export const isLogged = (logged) => {
+	return {
+		type: types.isLogged,
+		payload: {
+			logged,
+		},
+	};
+};
+
+//* AUTH ACTION CREATORS ASYNC
+export const loginThunk = (username, password) => {
 	return async (dispatch) => {
 		const loginData = await apiAuth.post(`${URL}/api/auth/login`, { username, password });
 
@@ -33,11 +44,18 @@ export const loginAuth = (username, password) => {
 	};
 };
 
-
 export const logoutThunk = () => {
 	return async (dispatch) => {
 		const loginData = await apiAuth.get(`${URL}/api/auth/logout`);
 
 		dispatch(logout(loginData.data.logged));
+	};
+};
+
+export const isLoggedThunk = () => {
+	return async (dispatch) => {
+		const loginData = await apiAuth.get(`${URL}/api/auth/islogged`)
+
+		dispatch(isLogged(loginData.data.logged));
 	};
 };

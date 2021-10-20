@@ -1,27 +1,19 @@
 import React, { useContext } from 'react';
+import { useDispatch } from 'react-redux';
+import { logoutThunk } from '../actions/authActions';
 import AddProduct from '../components/addproduct/AddProduct';
 import ChatBox from '../components/chatbox/ChatBox';
 import ProductTable from '../components/producttable/ProductTable';
 import { AppContext } from '../context/AppContext';
-// import { useHistory } from 'react-router-dom';
 
 const Home = ({ socket }) => {
-	const {
-		userLogin,
-		setLogoutMessage,
-		setFetchLogout,
-		setLoginData,
-		setLoggedData,
-	} = useContext(AppContext);
+	const { userLogin, setLogoutMessage } = useContext(AppContext);
 
-	// const history = useHistory();
+	const dispatch = useDispatch();
 
 	const handleLogout = () => {
 		setLogoutMessage(true);
-		setFetchLogout(true);
-		setLoginData({ data: { logged: false } });
-		setLoggedData({ data: { logged: false } });
-		// history.push('/login');
+		dispatch(logoutThunk());
 	};
 
 	return (

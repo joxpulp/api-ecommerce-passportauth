@@ -6,22 +6,19 @@ import Login from './components/login/Login';
 import Home from './scenes/Home';
 import { Redirect, Switch, Route } from 'react-router-dom';
 import Signup from './components/signup/Signup';
+import { useDispatch, useSelector } from 'react-redux';
+import { isLoggedThunk } from './actions/authActions';
 
 function App() {
-	const {
-		loginData,
-		products,
-		setProducts,
-		messages,
-		setMessages,
-		loggedData,
-		setFetchIsLogged,
-	} = useContext(AppContext);
-	const isAuth = loginData.data.logged || loggedData.data.logged;
+	const { products, setProducts, messages, setMessages } =
+		useContext(AppContext);
+
+	const dispatch = useDispatch();
+	const isAuth = useSelector((state) => state.auth.logged);
 
 	useEffect(() => {
-		setFetchIsLogged(true);
-	}, [setFetchIsLogged]);
+		dispatch(isLoggedThunk());
+	}, [dispatch]);
 
 	useEffect(() => {
 		socket.on('products', (data) => {
