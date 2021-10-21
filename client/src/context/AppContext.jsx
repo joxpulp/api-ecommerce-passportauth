@@ -4,7 +4,7 @@ import { useFetch } from '../hook/useFetch';
 export const AppContext = createContext();
 
 function AppProvider({ children }) {
-	const [userLogin, setUserLogin] = useState({});
+	const [userLogin, setUserLogin] = useState({ });
 	const [userSignup, setUserSignup] = useState({});
 	const [products, setProducts] = useState([]);
 	const [messages, setMessages] = useState([]);
