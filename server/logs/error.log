@@ -1,0 +1,6 @@
+[2021-10-21T12:26:37.469] [ERROR] default - Cast to ObjectId failed for value "5454" (type string) at path "_id" for model "productos"
+[2021-10-21T12:26:37.471] [FATAL] default - Cast to ObjectId failed for value "5454" (type string) at path "_id" for model "productos"
+[2021-10-21T12:29:30.165] [ERROR] default - Cast to ObjectId failed for value "21215" (type string) at path "_id" for model "productos"
+[2021-10-21T12:29:30.166] [FATAL] default - Cast to ObjectId failed for value "21215" (type string) at path "_id" for model "productos"
+[2021-10-21T12:31:02.594] [ERROR] default - Cast to ObjectId failed for value "21215" (type string) at path "_id" for model "productos"
+[2021-10-21T12:31:02.596] [FATAL] default - Cast to ObjectId failed for value "21215" (type string) at path "_id" for model "productos"

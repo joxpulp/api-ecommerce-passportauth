@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import faker from 'faker';
 import { products } from '../models/productschema';
 import { Products } from '../models/interfaces';
+import { logger } from '../config/logs';
 
 class ProductController {
 	async getProducts(req: Request, res: Response) {
@@ -25,6 +26,8 @@ class ProductController {
 			}
 		} catch (error) {
 			if (error instanceof Error) {
+				logger.error(error.message);
+				logger.fatal(error.message);
 				res.status(500).json({ error: error.message });
 			}
 		}
@@ -59,15 +62,19 @@ class ProductController {
 		try {
 			const { title, price, thumbnail } = req.body;
 
-			if (!title || !price || !thumbnail)
+			if (!title || !price || !thumbnail) {
+				logger.warn('Falto algo en body');
 				return res.status(400).json({ error: 'Missing body fields' });
+			}
 
 			const product = new products({ title, price, thumbnail });
 			const newProduct = await product.save();
-
+			logger.info('Producto CREADO');
 			return res.json({ newProduct });
 		} catch (error) {
 			if (error instanceof Error) {
+				logger.error(error.message);
+				logger.fatal(error.message);
 				res.status(500).json({ error: error.message });
 			}
 		}
@@ -96,6 +103,8 @@ class ProductController {
 			}
 		} catch (error) {
 			if (error instanceof Error) {
+				logger.error(error.message);
+				logger.fatal(error.message);
 				res.status(500).json({ error: error.message });
 			}
 		}
@@ -114,6 +123,9 @@ class ProductController {
 			}
 		} catch (error) {
 			if (error instanceof Error) {
+				logger.error(error.message);
+				logger.fatal(error.message);
+				logger.debug('Si hay un error en delete, debe salir este mensaje')
 				res.status(500).json({ error: error.message });
 			}
 		}

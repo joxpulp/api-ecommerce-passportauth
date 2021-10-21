@@ -3,10 +3,11 @@ import { CONFIG } from '../config/config';
 import * as http from 'http';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import session from 'express-session';
-import passport from '../middlewares/auth'
 import path from 'path';
+import session from 'express-session';
 import connectMongo from 'connect-mongo';
+import compression from 'compression'
+import passport from '../middlewares/auth'
 import { mongoose } from '../db/mongoose';
 import apiRouter from '../routes/index';
 
@@ -15,7 +16,7 @@ const app = express();
 const server = new http.Server(app);
 app.use(express.static(path.resolve('public')));
 
-
+app.use(compression())
 app.set('trust proxy', 1);
 app.set('json spaces', 2);
 app.use(cookieParser());
