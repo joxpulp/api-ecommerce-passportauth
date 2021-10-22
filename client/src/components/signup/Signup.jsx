@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
+import { GooSpinner } from 'react-spinners-kit';
 import { useForm } from '../../hook/useForm';
 import { logout, signupThunk } from '../../actions/authActions';
 import { removeError } from '../../actions/uiAactions';
@@ -11,7 +12,7 @@ const Signup = () => {
 		useForm({ username: '', password: '', name: '', lastname: '', email: '' });
 
 	const dispatch = useDispatch();
-	const { msgError } = useSelector((state) => state.ui);
+	const { loading, msgError } = useSelector((state) => state.ui);
 	const { msg } = useSelector((state) => state.auth);
 
 	const history = useHistory();
@@ -116,7 +117,7 @@ const Signup = () => {
 				<label htmlFor='email'>Email</label>
 			</div>
 			<button className='btn btn-success me-2' type='submit'>
-				Registrarse
+				{loading ? <GooSpinner size={25} /> : 'Registrarse'}
 			</button>
 			<button className='btn btn-secondary' onClick={backtoLogin} type='button'>
 				Volver al login

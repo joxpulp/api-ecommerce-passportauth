@@ -72,13 +72,16 @@ export const logoutThunk = () => {
 export const signupThunk = (body) => {
 	return async (dispatch) => {
 		try {
+			dispatch(startLoading());
 			const {
 				data: { msg },
 			} = await apiAuth.post(`${URL}/api/auth/signup`, {
 				...body,
 			});
 			dispatch(signup(msg));
+			dispatch(finishLoading());
 		} catch ({ response: { data } }) {
+			dispatch(finishLoading());
 			dispatch(setError(data.error));
 		}
 	};
