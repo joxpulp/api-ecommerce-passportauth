@@ -1,6 +1,6 @@
 import { types } from '../types/types';
 import axios from 'axios';
-import { finishLoading, setError, startLoading } from './uiAactions';
+import { finishLoading, setError, setSuccess, startLoading } from './uiAactions';
 
 const URL = 'http://localhost:8080';
 const apiAuth = axios.create({
@@ -21,13 +21,6 @@ export const login = (username, logged) => {
 export const logout = () => {
 	return {
 		type: types.logout,
-	};
-};
-
-export const signup = (msg) => {
-	return {
-		type: types.signup,
-		payload: { msg },
 	};
 };
 
@@ -78,7 +71,7 @@ export const signupThunk = (body) => {
 			} = await apiAuth.post(`${URL}/api/auth/signup`, {
 				...body,
 			});
-			dispatch(signup(msg));
+			dispatch(setSuccess(msg));
 			dispatch(finishLoading());
 		} catch ({ response: { data } }) {
 			dispatch(finishLoading());

@@ -13,6 +13,19 @@ export const removeError = () => {
 	};
 };
 
+export const setSuccess = (msg) => {
+	return {
+		type: types.uiSetSuccess,
+		payload: msg
+	}
+}
+
+export const removeSuccess = () => {
+	return {
+		type: types.uiRemoveSuccess,
+	}
+}
+
 export const startLoading = () => {
 	return {
 		type: types.uiStartLoading,

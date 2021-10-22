@@ -31,17 +31,31 @@ export const uiReducer = (state = initialState, action) => {
 				loading: false,
 			};
 
-		case types.uiSetLogoutMessage: 
+		case types.uiSetLogoutMessage:
 			return {
 				...state,
-				logoutMessage: true
-			}
-			
-		case types.uiRemoveLogoutMessage: 
+				logoutMessage: true,
+			};
+
+		case types.uiRemoveLogoutMessage:
 			return {
 				...state,
-				logoutMessage: false
-			}
+				logoutMessage: false,
+			};
+
+		case types.uiSetSuccess: {
+			return {
+				...state,
+				msgSuccess: action.payload,
+			};
+		}
+
+		case types.uiRemoveSuccess: {
+			return {
+				...state,
+				msgSuccess: null,
+			};
+		}
 
 		default:
 			return state;

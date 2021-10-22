@@ -26,6 +26,11 @@ function Login() {
 		localStorage.setItem('username', JSON.stringify(username));
 	};
 
+	const signup = () => {
+		history.push('/signup');
+		dispatch(removeError());
+	};
+
 	useEffect(() => {
 		setTimeout(() => {
 			dispatch(removeLogoutMessage());
@@ -77,7 +82,6 @@ function Login() {
 						value={username}
 						onChange={handleInputChange}
 						required
-						autoFocus
 					/>
 					<label htmlFor='username'>Username</label>
 				</div>
@@ -90,7 +94,6 @@ function Login() {
 						value={password}
 						onChange={handleInputChange}
 						required
-						autoFocus
 					/>
 					<label htmlFor='password'>Contrasena</label>
 				</div>
@@ -103,7 +106,7 @@ function Login() {
 				</button>
 				<button
 					className='btn btn-secondary'
-					onClick={() => history.push('/signup')}
+					onClick={signup}
 					disabled={loading}
 				>
 					Registrarse

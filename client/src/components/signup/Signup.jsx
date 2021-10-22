@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { GooSpinner } from 'react-spinners-kit';
 import { useForm } from '../../hook/useForm';
-import { logout, signupThunk } from '../../actions/authActions';
-import { removeError } from '../../actions/uiAactions';
+import { signupThunk } from '../../actions/authActions';
+import { removeError, removeSuccess } from '../../actions/uiAactions';
 
 const Signup = () => {
 	const [{ username, password, name, lastname, email }, handleInputChange] =
 		useForm({ username: '', password: '', name: '', lastname: '', email: '' });
 
 	const dispatch = useDispatch();
-	const { loading, msgError } = useSelector((state) => state.ui);
-	const { msg } = useSelector((state) => state.auth);
+	const { loading, msgSuccess, msgError } = useSelector((state) => state.ui);
 
 	const history = useHistory();
 
@@ -21,41 +20,51 @@ const Signup = () => {
 		e.preventDefault();
 		dispatch(signupThunk({ username, password, name, lastname, email }));
 		dispatch(removeError());
+		dispatch(removeSuccess());
 	};
 
 	const backtoLogin = () => {
 		history.push('/login');
-		dispatch(logout());
+		dispatch(removeSuccess());
+		dispatch(removeError());
 	};
+
+	useEffect(() => {
+		setTimeout(() => {
+			dispatch(removeError());
+		}, 3000);
+	}, [dispatch, msgError]);
 
 	return (
 		<form id='form' onSubmit={signup}>
 			<h2 className='text-center mb-4 text-light'>Registrate</h2>
-			{msgError && (
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0, y: '-100%' }}
-					className='container alert alert-danger text-center'
-					role='alert'
-				>
-					{msgError}
-				</motion.div>
-			)}
-			{msg && (
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0, y: '-100%' }}
-					className='container alert alert-success text-center'
-					role='alert'
-				>
-					{msg}
-					<button className='btn btn-success ms-2' onClick={backtoLogin}>
-						Iniciar sesion
-					</button>
-				</motion.div>
-			)}
+			<AnimatePresence>
+				{msgError && (
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						className='container alert alert-danger text-center'
+						role='alert'
+					>
+						{msgError}
+					</motion.div>
+				)}
+				{msgSuccess && (
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						className='container alert alert-success text-center'
+						role='alert'
+					>
+						{msgSuccess}
+						<button className='btn btn-success ms-2' onClick={backtoLogin}>
+							Iniciar sesion
+						</button>
+					</motion.div>
+				)}
+			</AnimatePresence>
 			<div className='form-floating mb-3'>
 				<input
 					type='text'
