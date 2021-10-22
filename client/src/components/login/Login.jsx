@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
+import { useForm } from '../../hook/useForm';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { AnimatePresence, motion } from 'framer-motion';
-import { GooSpinner } from 'react-spinners-kit';
-import { useForm } from '../../hook/useForm';
 import { loginThunk } from '../../redux/reducers/authReducer';
 import { removeError, removeLogoutMessage } from '../../redux/reducers/uiReducer';
+import { AnimatePresence, motion } from 'framer-motion';
+import { GooSpinner } from 'react-spinners-kit';
 
 function Login() {
 	const [{ username, password }, handleInputChange] = useForm({

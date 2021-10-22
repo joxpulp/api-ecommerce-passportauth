@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import AddProduct from '../components/addproduct/AddProduct';
-import ChatBox from '../components/chatbox/ChatBox';
-import ProductTable from '../components/producttable/ProductTable';
 import { logoutThunk } from '../redux/reducers/authReducer';
 import { setLogoutMessage } from '../redux/reducers/uiReducer';
+import AddProduct from '../components/addproduct/AddProduct';
+import ProductTable from '../components/producttable/ProductTable';
+import ChatBox from '../components/chatbox/ChatBox';
 
 const Home = ({ socket }) => {
 	const dispatch = useDispatch();
