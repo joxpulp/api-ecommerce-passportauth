@@ -1,25 +1,28 @@
-import React, { useContext } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { logoutThunk } from '../actions/authActions';
+import { setLogoutMessage } from '../actions/uiAactions';
 import AddProduct from '../components/addproduct/AddProduct';
 import ChatBox from '../components/chatbox/ChatBox';
 import ProductTable from '../components/producttable/ProductTable';
-import { AppContext } from '../context/AppContext';
 
 const Home = ({ socket }) => {
-	const { userLogin, setLogoutMessage } = useContext(AppContext);
 
 	const dispatch = useDispatch();
+	const { username } = useSelector((state) => state.auth);
 
 	const handleLogout = () => {
-		setLogoutMessage(true);
+		dispatch(setLogoutMessage())
 		dispatch(logoutThunk());
 	};
 
 	return (
 		<>
-			<div className='container alert alert-success text-center' role='alert'>
-				Bienvenido {userLogin.username}
+			<div
+				className='container alert alert-success text-center'
+				role='alert'
+			>
+				Bienvenido {username}
 				<button className='btn btn-warning ms-2' onClick={handleLogout}>
 					Salir
 				</button>

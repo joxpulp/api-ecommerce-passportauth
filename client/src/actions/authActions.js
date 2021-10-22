@@ -1,12 +1,13 @@
 import { types } from '../types/types';
 import axios from 'axios';
+import { finishLoading, setError, startLoading } from './uiAactions';
 
 const URL = 'http://localhost:8080';
 const apiAuth = axios.create({
 	withCredentials: true,
 });
 
-//* AUTH ACTION CREATORS SYNCRONOUS 
+//* AUTH ACTION CREATORS SYNCRONOUS
 export const login = (username, logged) => {
 	return {
 		type: types.login,
@@ -17,12 +18,16 @@ export const login = (username, logged) => {
 	};
 };
 
-export const logout = (logged) => {
+export const logout = () => {
 	return {
 		type: types.logout,
-		payload: {
-			logged,
-		},
+	};
+};
+
+export const signup = (msg) => {
+	return {
+		type: types.signup,
+		payload: { msg },
 	};
 };
 
@@ -38,24 +43,53 @@ export const isLogged = (logged) => {
 //* AUTH ACTION CREATORS ASYNC
 export const loginThunk = (username, password) => {
 	return async (dispatch) => {
-		const loginData = await apiAuth.post(`${URL}/api/auth/login`, { username, password });
+		try {
+			dispatch(startLoading());
+			const {
+				data: { user, logged },
+			} = await apiAuth.post(`${URL}/api/auth/login`, {
+				username,
+				password,
+			});
 
-		dispatch(login(loginData.data.user, loginData.data.logged));
+			dispatch(login(user, logged));
+			dispatch(finishLoading());
+		} catch ({ response: { data } }) {
+			dispatch(finishLoading());
+			dispatch(setError(data.error));
+		}
 	};
 };
 
 export const logoutThunk = () => {
 	return async (dispatch) => {
-		const loginData = await apiAuth.get(`${URL}/api/auth/logout`);
+		await apiAuth.get(`${URL}/api/auth/logout`);
 
-		dispatch(logout(loginData.data.logged));
+		dispatch(logout());
+	};
+};
+
+export const signupThunk = (body) => {
+	return async (dispatch) => {
+		try {
+			const {
+				data: { msg },
+			} = await apiAuth.post(`${URL}/api/auth/signup`, {
+				...body,
+			});
+			dispatch(signup(msg));
+		} catch ({ response: { data } }) {
+			dispatch(setError(data.error));
+		}
 	};
 };
 
 export const isLoggedThunk = () => {
 	return async (dispatch) => {
-		const loginData = await apiAuth.get(`${URL}/api/auth/islogged`)
+		const {
+			data: { logged },
+		} = await apiAuth.get(`${URL}/api/auth/islogged`);
 
-		dispatch(isLogged(loginData.data.logged));
+		dispatch(isLogged(logged));
 	};
 };

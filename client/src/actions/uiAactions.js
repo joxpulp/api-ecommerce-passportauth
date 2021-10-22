@@ -12,3 +12,26 @@ export const removeError = () => {
 		type: types.uiRemoveError,
 	};
 };
+
+export const startLoading = () => {
+	return {
+		type: types.uiStartLoading,
+	}
+}
+
+export const finishLoading = () => {
+	return {
+		type: types.uiFinishLoading,
+	}
+}
+
+export const setLogoutMessage = () => {
+	return {
+		type: types.uiSetLogoutMessage
+	}
+}
+export const removeLogoutMessage = () => {
+	return {
+		type: types.uiRemoveLogoutMessage
+	}
+}

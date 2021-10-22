@@ -1,38 +1,36 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { AppContext } from '../../context/AppContext';
+import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { useForm } from '../../hook/useForm';
+import { logout, signupThunk } from '../../actions/authActions';
+import { removeError } from '../../actions/uiAactions';
 
 const Signup = () => {
 	const [{ username, password, name, lastname, email }, handleInputChange] =
 		useForm({ username: '', password: '', name: '', lastname: '', email: '' });
 
-	const {
-		setUserSignup,
-		signupData,
-		fetchSignup,
-		setFetchSignup,
-		loadingSignup,
-	} = useContext(AppContext);
+	const dispatch = useDispatch();
+	const { msgError } = useSelector((state) => state.ui);
+	const { msg } = useSelector((state) => state.auth);
 
 	const history = useHistory();
 
 	const signup = (e) => {
 		e.preventDefault();
-		setUserSignup({ username, password, name, lastname, email });
-		setFetchSignup(true);
-		// (!signupData.data.error && !loadingSignup) && history.push('/login');
+		dispatch(signupThunk({ username, password, name, lastname, email }));
+		dispatch(removeError());
 	};
 
-	useEffect(() => {
-		setFetchSignup(false);
-	}, [fetchSignup, setFetchSignup]);
+	const backtoLogin = () => {
+		history.push('/login');
+		dispatch(logout());
+	};
 
 	return (
 		<form id='form' onSubmit={signup}>
 			<h2 className='text-center mb-4 text-light'>Registrate</h2>
-			{signupData.data.error && !loadingSignup && (
+			{msgError && (
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
@@ -40,10 +38,10 @@ const Signup = () => {
 					className='container alert alert-danger text-center'
 					role='alert'
 				>
-					{signupData.data.error}
+					{msgError}
 				</motion.div>
 			)}
-			{signupData.data.msg && !loadingSignup && (
+			{msg && (
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
@@ -51,10 +49,10 @@ const Signup = () => {
 					className='container alert alert-success text-center'
 					role='alert'
 				>
-					Usuario creado,{' '}
-					<a className='alert-link' href='/login'>
+					{msg}
+					<button className='btn btn-success ms-2' onClick={backtoLogin}>
 						Iniciar sesion
-					</a>
+					</button>
 				</motion.div>
 			)}
 			<div className='form-floating mb-3'>
@@ -120,11 +118,7 @@ const Signup = () => {
 			<button className='btn btn-success me-2' type='submit'>
 				Registrarse
 			</button>
-			<button
-				className='btn btn-secondary'
-				onClick={() => history.push('/login')}
-				type='button'
-			>
+			<button className='btn btn-secondary' onClick={backtoLogin} type='button'>
 				Volver al login
 			</button>
 		</form>
