@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Login from './components/login/Login';
 import Home from './scenes/Home';
-import { Switch } from 'react-router-dom';
+import { Switch, useLocation } from 'react-router-dom';
 import Signup from './components/signup/Signup';
 import { useDispatch, useSelector } from 'react-redux';
 import { isLoggedThunk } from './actions/authActions';
@@ -12,6 +12,8 @@ import PublicRoute from './router/PublicRoute';
 function App() {
 	const dispatch = useDispatch();
 	const { logged } = useSelector((state) => state.auth);
+
+	const location = useLocation();
 
 	useEffect(() => {
 		dispatch(isLoggedThunk());
@@ -33,11 +35,13 @@ function App() {
 				Bienvenido a la API de Productos
 			</motion.h1>
 			<hr style={{ backgroundColor: 'white', width: '80%' }} />
-			<Switch>
-				<PublicRoute isAuth={logged} path='/login' component={Login} />
-				<PublicRoute isAuth={logged} path='/signup' component={Signup} />
-				<PrivateRoute exact isAuth={logged} path='/' component={Home} />
-			</Switch>
+			<AnimatePresence exitBeforeEnter initial={false}>
+				<Switch location={location} key={location.pathname}>
+					<PublicRoute isAuth={logged} path='/login' component={Login} />
+					<PublicRoute isAuth={logged} path='/signup' component={Signup} />
+					<PrivateRoute exact isAuth={logged} path='/' component={Home} />
+				</Switch>
+			</AnimatePresence>
 		</motion.div>
 	);
 }

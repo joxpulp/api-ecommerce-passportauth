@@ -36,7 +36,13 @@ const Signup = () => {
 	}, [dispatch, msgError]);
 
 	return (
-		<form id='form' onSubmit={signup}>
+		<motion.form
+			id='form'
+			onSubmit={signup}
+			initial={{ opacity: 0, x: 100 }}
+			animate={{ opacity: 1, x: 0 }}
+			exit={{ opacity: 0, x: -100 }}
+		>
 			<h2 className='text-center mb-4 text-light'>Registrate</h2>
 			<AnimatePresence>
 				{msgError && (
@@ -131,7 +137,7 @@ const Signup = () => {
 			<button className='btn btn-secondary' onClick={backtoLogin} type='button'>
 				Volver al login
 			</button>
-		</form>
+		</motion.form>
 	);
 };
 

@@ -45,19 +45,25 @@ function Login() {
 
 	if (logoutMessage) {
 		return (
-			<motion.div
-				initial={{ opacity: 0, y: '-100%' }}
-				animate={{ opacity: 1, y: 0 }}
-				className='container alert alert-info text-center'
-				role='alert'
-			>
-				Hasta luego
-			</motion.div>
+			<AnimatePresence exitBeforeEnter>
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					className='container alert alert-info text-center'
+					role='alert'
+				>
+					Hasta luego
+				</motion.div>
+			</AnimatePresence>
 		);
 	}
 
 	return (
-		<>
+		<motion.div
+			initial={{ opacity: 0, x: -100 }}
+			animate={{ opacity: 1, x: 0 }}
+			exit={{ opacity: 0, x: 100 }}
+		>
 			<AnimatePresence>
 				{msgError && (
 					<motion.div
@@ -98,13 +104,14 @@ function Login() {
 					<label htmlFor='password'>Contrasena</label>
 				</div>
 				<button
-					className='btn btn-success me-3'
 					type='submit'
+					className='btn btn-success me-3'
 					disabled={loading}
 				>
 					{loading ? <GooSpinner size={25} /> : 'Ingresar'}
 				</button>
 				<button
+					type='button'
 					className='btn btn-secondary'
 					onClick={signup}
 					disabled={loading}
@@ -112,7 +119,7 @@ function Login() {
 					Registrarse
 				</button>
 			</form>
-		</>
+		</motion.div>
 	);
 }
 
