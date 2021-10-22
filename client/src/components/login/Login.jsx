@@ -8,25 +8,11 @@ import { loginThunk } from '../../redux/reducers/authReducer';
 import { removeError, removeLogoutMessage } from '../../redux/reducers/uiReducer';
 
 function Login() {
-<<<<<<< HEAD
-	const [username, setUsername] = useState('');
-	const [password, setPassword] = useState('');
-	const {
-		setUserLogin,
-		setFetchLogin,
-		logoutMessage,
-		setLogoutMessage,
-		fetchLogin,
-		loginData,
-		loadingLogin,
-	} = useContext(AppContext);
-=======
 	const [{ username, password }, handleInputChange] = useForm({
 		username: '',
 		password: '',
 	});
 
->>>>>>> frontend-reduxtoolkit
 	const history = useHistory();
 
 	// Dispatch an action to the reducer
@@ -68,62 +54,6 @@ function Login() {
 				>
 					Hasta luego
 				</motion.div>
-<<<<<<< HEAD
-			) : (
-				<>
-					{loginData.data.error && !loadingLogin && (
-						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0, y: '-100%' }}
-							className='container alert alert-danger text-center'
-							role='alert'
-						>
-							{loginData.data.error}
-						</motion.div>
-					)}
-					<h2 className='text-center mb-4 text-light'>Login de usuario</h2>
-					<div className='form-floating mb-3'>
-						<input
-							type='text'
-							className='form-control'
-							id='username'
-							name='username'
-							placeholder='username'
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
-							required
-							autoFocus
-						/>
-						<label htmlFor='username'>Username</label>
-					</div>
-					<div className='form-floating mb-3'>
-						<input
-							type='password'
-							className='form-control'
-							id='password'
-							name='password'
-							placeholder='password'
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							required
-							autoFocus
-						/>
-						<label htmlFor='password'>Contrasena</label>
-					</div>
-					<button className='btn btn-success me-3' type='submit'>
-						Ingresar
-					</button>
-					<button
-						className='btn btn-secondary'
-						onClick={() => history.push('/signup')}
-					>
-						Registrarse
-					</button>
-				</>
-			)}
-		</motion.form>
-=======
 			</AnimatePresence>
 		);
 	}
@@ -190,7 +120,6 @@ function Login() {
 				</button>
 			</form>
 		</motion.div>
->>>>>>> frontend-reduxtoolkit
 	);
 }
 
