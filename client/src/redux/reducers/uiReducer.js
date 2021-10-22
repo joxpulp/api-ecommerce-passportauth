@@ -45,6 +45,12 @@ const uiSlice = createSlice({
 					loading: true,
 				};
 			})
+			.addCase(loginThunk.fulfilled, (state, action) => {
+				return {
+					...state,
+					loading: false,
+				};
+			})
 			.addCase(loginThunk.rejected, (state, action) => {
 				return {
 					...state,
