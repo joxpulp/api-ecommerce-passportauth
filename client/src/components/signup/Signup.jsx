@@ -23,7 +23,6 @@ const Signup = () => {
 		e.preventDefault();
 		setUserSignup({ username, password, name, lastname, email });
 		setFetchSignup(true);
-		// (!signupData.data.error && !loadingSignup) && history.push('/login');
 	};
 
 	useEffect(() => {
