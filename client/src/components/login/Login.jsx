@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AnimatePresence, motion } from 'framer-motion';
 import { GooSpinner } from 'react-spinners-kit';
 import { useForm } from '../../hook/useForm';
-import { loginThunk } from '../../actions/authActions';
-import { removeError, removeLogoutMessage } from '../../actions/uiAactions';
+import { loginThunk } from '../../redux/reducers/authReducer';
+import { removeError, removeLogoutMessage } from '../../redux/reducers/uiReducer';
 
 function Login() {
 	const [{ username, password }, handleInputChange] = useForm({
@@ -22,7 +22,7 @@ function Login() {
 
 	const login = (e) => {
 		e.preventDefault();
-		dispatch(loginThunk(username, password));
+		dispatch(loginThunk({username, password}));
 		localStorage.setItem('username', JSON.stringify(username));
 	};
 

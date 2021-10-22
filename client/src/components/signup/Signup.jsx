@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AnimatePresence, motion } from 'framer-motion';
 import { GooSpinner } from 'react-spinners-kit';
 import { useForm } from '../../hook/useForm';
-import { signupThunk } from '../../actions/authActions';
-import { removeError, removeSuccess } from '../../actions/uiAactions';
+import { signupThunk } from '../../redux/reducers/authReducer';
+import { removeError, removeSuccess } from '../../redux/reducers/uiReducer';
 
 const Signup = () => {
 	const [{ username, password, name, lastname, email }, handleInputChange] =

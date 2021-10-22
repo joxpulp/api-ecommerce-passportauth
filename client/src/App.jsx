@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import Login from './components/login/Login';
-import Home from './scenes/Home';
 import { Switch, useLocation } from 'react-router-dom';
-import Signup from './components/signup/Signup';
 import { useDispatch, useSelector } from 'react-redux';
-import { isLoggedThunk } from './actions/authActions';
+import { isLoggedThunk } from './redux/reducers/authReducer';
+import { AnimatePresence, motion } from 'framer-motion';
 import PrivateRoute from './router/PrivateRoute';
 import PublicRoute from './router/PublicRoute';
+import Login from './components/login/Login';
+import Home from './scenes/Home';
+import Signup from './components/signup/Signup';
 
 function App() {
 	const dispatch = useDispatch();
