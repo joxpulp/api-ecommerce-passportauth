@@ -4,11 +4,6 @@ import { socket } from '../services/socket/socket';
 export const AppContext = createContext();
 
 function AppProvider({ children }) {
-<<<<<<< HEAD
-	const [userLogin, setUserLogin] = useState({ });
-	const [userSignup, setUserSignup] = useState({});
-=======
->>>>>>> frontend-reduxtoolkit
 	const [products, setProducts] = useState([]);
 	const [messages, setMessages] = useState([]);
 
