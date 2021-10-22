@@ -31,7 +31,11 @@ app.use(
 	session({
 		store: connectMongo.create({ mongoUrl: CONFIG.MONGO_URL }),
 		secret: CONFIG.SECRET,
+<<<<<<< HEAD
 		cookie: { secure: 'auto', maxAge: 1000 * 120 },
+=======
+		cookie: { sameSite: false, secure: 'auto', maxAge: 1000 * 120 },
+>>>>>>> frontend-reduxtoolkit
 		saveUninitialized: false,
 		resave: true,
 		rolling: true

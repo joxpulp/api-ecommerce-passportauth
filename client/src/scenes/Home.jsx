@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useContext } from 'react';
 import AddProduct from '../components/addproduct/AddProduct';
 import ChatBox from '../components/chatbox/ChatBox';
@@ -15,19 +16,29 @@ const Home = () => {
 	} = useContext(AppContext);
 
 	// const history = useHistory();
+=======
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import AddProduct from '../components/addproduct/AddProduct';
+import ChatBox from '../components/chatbox/ChatBox';
+import ProductTable from '../components/producttable/ProductTable';
+import { logoutThunk } from '../redux/reducers/authReducer';
+import { setLogoutMessage } from '../redux/reducers/uiReducer';
+
+const Home = ({ socket }) => {
+	const dispatch = useDispatch();
+	const { username } = useSelector((state) => state.auth);
+>>>>>>> frontend-reduxtoolkit
 
 	const handleLogout = () => {
-		setLogoutMessage(true);
-		setFetchLogout(true);
-		setLoginData({ data: { logged: false } });
-		setLoggedData({ data: { logged: false } });
-		// history.push('/login');
+		dispatch(setLogoutMessage());
+		dispatch(logoutThunk());
 	};
 
 	return (
 		<>
 			<div className='container alert alert-success text-center' role='alert'>
-				Bienvenido {userLogin.username}
+				Bienvenido {username}
 				<button className='btn btn-warning ms-2' onClick={handleLogout}>
 					Salir
 				</button>
