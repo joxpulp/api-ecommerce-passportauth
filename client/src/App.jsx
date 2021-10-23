@@ -32,7 +32,7 @@ function App() {
 				animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
 				className='text-center my-4 text-light'
 			>
-				Bienvenido a la API de Productos PIOLAS 
+				Bienvenido a la API de Productos PIOLAS
 			</motion.h1>
 			<hr style={{ backgroundColor: 'white', width: '80%' }} />
 			<AnimatePresence exitBeforeEnter initial={false}>
