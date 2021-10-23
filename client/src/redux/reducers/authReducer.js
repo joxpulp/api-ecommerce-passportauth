@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const URL = 'http://localhost:8080';
+const URL = 'https://apipassredux.herokuapp.com';
 const apiAuth = axios.create({
 	withCredentials: true,
 });
