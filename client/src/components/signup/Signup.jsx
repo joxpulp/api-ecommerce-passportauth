@@ -131,10 +131,10 @@ const Signup = () => {
 				/>
 				<label htmlFor='email'>Email</label>
 			</div>
-			<button className='btn btn-success me-2' type='submit'>
+			<button className='btn btn-success me-2' type='submit' disabled={loading}>
 				{loading ? <GooSpinner size={25} /> : 'Registrarse'}
 			</button>
-			<button className='btn btn-secondary' onClick={backtoLogin} type='button'>
+			<button className='btn btn-secondary' onClick={backtoLogin} type='button' disabled={loading}>
 				Volver al login
 			</button>
 		</motion.form>
