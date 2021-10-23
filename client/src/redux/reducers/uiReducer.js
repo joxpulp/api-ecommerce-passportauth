@@ -58,15 +58,23 @@ const uiSlice = createSlice({
 					loading: false,
 				};
 			})
+			.addCase(signupThunk.pending, (state, action) => {
+				return {
+					...state,
+					loading: true
+				}
+			})
 			.addCase(signupThunk.fulfilled, (state, action) => {
 				return {
 					...state,
+					loading: false,
 					msgSuccess: action.payload.msg,
 				};
 			})
 			.addCase(signupThunk.rejected, (state, action) => {
 				return {
 					...state,
+					loading: false,
 					msgError: action.payload.error,
 				};
 			});
