@@ -1,9 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { AppContext } from '../../context/AppContext';
+import { io } from 'socket.io-client';
 
 function ProductTable() {
-	const { products } = useContext(AppContext);
+	const [products, setProducts] = useState([]);
+
+	useEffect(() => {
+		const socket = io('https://apipassredux.herokuapp.com', {
+			transports: ['websocket'],
+		});
+
+		socket.on('products', (data) => {
+			setProducts(data);
+		});
+		return () => {
+			socket.off('products');
+		};
+	}, []);
 
 	return (
 		<div className='container'>

@@ -6,7 +6,7 @@ import AddProduct from '../components/addproduct/AddProduct';
 import ProductTable from '../components/producttable/ProductTable';
 import ChatBox from '../components/chatbox/ChatBox';
 
-const Home = ({ socket }) => {
+const Home = () => {
 	const dispatch = useDispatch();
 	const { username } = useSelector((state) => state.auth);
 

@@ -1,13 +1,13 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { AppContext } from '../../context/AppContext';
 import { socket } from '../../services/socket/socket';
+import { io } from 'socket.io-client';
 import dayjs from 'dayjs';
 
 function ChatBox() {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
-	const { messages } = useContext(AppContext);
+	const [messages, setMessages] = useState([]);
 
 	const chatBox = useRef(null);
 
@@ -22,6 +22,18 @@ function ChatBox() {
 		setMessage('');
 		chatBox.current.scrollTop = chatBox.current.scrollHeight;
 	};
+
+	useEffect(() => {
+		const socket = io('https://apipassredux.herokuapp.com', {
+			transports: ['websocket'],
+		});
+		socket.on('messages', (data) => {
+			setMessages(data);
+		});
+		return () => {
+			socket.off('messages');
+		};
+	}, []);
 
 	return (
 		<div className='container'>
@@ -82,9 +94,7 @@ function ChatBox() {
 						name='message'
 						placeholder='message'
 						value={message}
-						disabled={
-							!/^[a-z0-9._-]+@{1}[\\a-z0-9.]+\.[a-z]{2,3}$/.test(email)
-						}
+						disabled={!/^[a-z0-9._-]+@{1}[\\a-z0-9.]+\.[a-z]{2,3}$/.test(email)}
 						onChange={(e) => setMessage(e.target.value)}
 						onKeyUp={(e) => e.key === 'Enter' && sendMessage()}
 						required
@@ -92,9 +102,7 @@ function ChatBox() {
 					<label htmlFor='message'>Mensaje</label>
 					<button
 						className='btn btn-success ms-2'
-						disabled={
-							!/^[a-z0-9._-]+@{1}[\\a-z0-9.]+\.[a-z]{2,3}$/.test(email)
-						}
+						disabled={!/^[a-z0-9._-]+@{1}[\\a-z0-9.]+\.[a-z]{2,3}$/.test(email)}
 						type='submit'
 					>
 						Enviar
