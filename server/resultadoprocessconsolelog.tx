@@ -1,0 +1,724 @@
+Statistical profiling result from resultadosprof.log, (2066 ticks, 32 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     15    0.7%          /usr/lib/system/libsystem_platform.dylib
+     12    0.6%          /usr/lib/system/libsystem_pthread.dylib
+      3    0.1%          /usr/lib/system/libsystem_c.dylib
+      2    0.1%          /usr/lib/system/libsystem_malloc.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     15    0.7%    0.7%  LazyCompile: *resolve path.js:973:10
+      6    0.3%    0.3%  LazyCompile: *realpathSync fs.js:1650:22
+      5    0.2%    0.2%  LazyCompile: *readPackage internal/modules/cjs/loader.js:240:21
+      5    0.2%    0.2%  LazyCompile: *hidden internal/errors.js:286:25
+      4    0.2%    0.2%  LazyCompile: *Module._nodeModulePaths internal/modules/cjs/loader.js:575:37
+      3    0.1%    0.1%  LazyCompile: *normalizeString path.js:52:25
+      3    0.1%    0.1%  LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      2    0.1%    0.1%  LazyCompile: *dirname path.js:1127:10
+      2    0.1%    0.1%  LazyCompile: *deserializeObject /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/deserializer.js:53:27
+      2    0.1%    0.1%  LazyCompile: *basename path.js:1153:11
+      1    0.0%    0.0%  LazyCompile: *stat internal/modules/cjs/loader.js:132:14
+
+ [C++]:
+   ticks  total  nonlib   name
+    785   38.0%   38.6%  t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+    461   22.3%   22.7%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    240   11.6%   11.8%  T ___channel_get_opt
+     61    3.0%    3.0%  T node::native_module::NativeModuleEnv::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     57    2.8%    2.8%  T _munmap
+     27    1.3%    1.3%  t node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+     22    1.1%    1.1%  t __ZN2v88internal12StringHasher20HashSequentialStringIhEEjPKT_iy
+     21    1.0%    1.0%  T _mprotect
+     19    0.9%    0.9%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+     17    0.8%    0.8%  t void node::Buffer::(anonymous namespace)::StringSlice<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+     16    0.8%    0.8%  t _szone_malloc_should_clear
+     14    0.7%    0.7%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+     10    0.5%    0.5%  t __malloc_initialize
+     10    0.5%    0.5%  T _mach_msg
+      9    0.4%    0.4%  T node::crypto::SSLWrap<node::TLSWrap>::GetPeerCertificate(v8::FunctionCallbackInfo<v8::Value> const&)
+      8    0.4%    0.4%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+      8    0.4%    0.4%  T node::crypto::SecureContext::AddRootCerts(v8::FunctionCallbackInfo<v8::Value> const&)
+      7    0.3%    0.3%  t node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      6    0.3%    0.3%  t node::EnvGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      6    0.3%    0.3%  T node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.2%    0.2%  t __ZN2v88internalL26Builtin_Impl_HandleApiCallENS0_16BuiltinArgumentsEPNS0_7IsolateE
+      5    0.2%    0.2%  T ___telemetry
+      4    0.2%    0.2%  t node::fs::LStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.2%    0.2%  t node::fs::FStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.2%    0.2%  t ___find_warguments
+      4    0.2%    0.2%  T void node::StreamBase::JSMethod<&(node::StreamBase::WriteBuffer(v8::FunctionCallbackInfo<v8::Value> const&))>(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.2%    0.2%  T node::crypto::PBKDF2(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.2%    0.2%  T _mach_vm_purgable_control
+      4    0.2%    0.2%  T _fprintf
+      3    0.1%    0.1%  t _update_cache_for_file_streams
+      3    0.1%    0.1%  t _tiny_malloc_from_free_list
+      3    0.1%    0.1%  t __os_once_gate_wait_slow
+      3    0.1%    0.1%  t __ZN2v88internal12_GLOBAL__N_119HandleApiCallHelperILb0EEENS0_11MaybeHandleINS0_6ObjectEEEPNS0_7IsolateENS0_6HandleINS0_10HeapObjectEEESA_NS8_INS0_20FunctionTemplateInfoEEENS8_IS4_EENS0_16BuiltinArgumentsE
+      3    0.1%    0.1%  T ___mach_stack_logging_enumerate_records
+      2    0.1%    0.1%  t _szone_pressure_relief
+      2    0.1%    0.1%  t __cxxabiv1::do_free(void*)
+      2    0.1%    0.1%  t ___vfprintf
+      2    0.1%    0.1%  t __ZN2v88internal6String7FlattenEPNS0_7IsolateENS0_6HandleIS1_EENS0_14AllocationTypeE
+      2    0.1%    0.1%  T node::crypto::SecureContext::Init(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  T node::TTYWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  T node::TLSWrap::Start(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  T node::StreamBase::CallJSOnreadMethod(long, v8::Local<v8::ArrayBuffer>, unsigned long, node::StreamBase::StreamBaseJSChecks)
+      2    0.1%    0.1%  T _mach_port_extract_member
+      2    0.1%    0.1%  T _kpersona_info
+      2    0.1%    0.1%  T _free
+      2    0.1%    0.1%  T __ZN2v88Function4CallENS_5LocalINS_7ContextEEENS1_INS_5ValueEEEiPS5_
+      1    0.0%    0.0%  t void node::cares_wrap::(anonymous namespace)::Query<node::cares_wrap::(anonymous namespace)::QueryTxtWrap>(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t std::__1::locale::__imp::__imp(std::__1::locale::__imp const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int)
+      1    0.0%    0.0%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      1    0.0%    0.0%  t non-virtual thunk to v8::internal::PointersUpdatingVisitor::~PointersUpdatingVisitor()
+      1    0.0%    0.0%  t node::os::GetCPUInfo(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::fs::GetReqWrap(v8::FunctionCallbackInfo<v8::Value> const&, int, bool)
+      1    0.0%    0.0%  t node::cares_wrap::(anonymous namespace)::ChannelWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::Hrtime(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::EnvQuery(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Integer> const&)
+      1    0.0%    0.0%  t node::Cwd(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::ArrayBufferViewContents<char, 64ul>::Read(v8::Local<v8::ArrayBufferView>)
+      1    0.0%    0.0%  t node::(anonymous namespace)::IsProxy(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::(anonymous namespace)::GetLibuvNow(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t _small_free_list_remove_ptr_no_clear
+      1    0.0%    0.0%  t _free_small
+      1    0.0%    0.0%  t _create_scalable_szone
+      1    0.0%    0.0%  t _allocate_pages
+      1    0.0%    0.0%  t __class_getNonMetaClass
+      1    0.0%    0.0%  t ___vfwscanf
+      1    0.0%    0.0%  t __ZN2v88internalL28Builtin_Impl_DateConstructorENS0_16BuiltinArgumentsEPNS0_7IsolateE
+      1    0.0%    0.0%  t __ZN2v88internal6Object13GetSimpleHashES1_
+      1    0.0%    0.0%  t __ZN2v88internal25FunctionCallbackArguments4CallENS0_15CallHandlerInfoE
+      1    0.0%    0.0%  t __ZN2v88internal17PrototypeIterator7AdvanceEv
+      1    0.0%    0.0%  t __ZN2v88internal17PrototypeIterator43AdvanceFollowingProxiesIgnoringAccessChecksEv
+      1    0.0%    0.0%  t __ZN2v88internal14LookupIteratorC2EPNS0_7IsolateENS0_6HandleINS0_6ObjectEEENS4_INS0_4NameEEEmNS4_INS0_10JSReceiverEEENS1_13ConfigurationE
+      1    0.0%    0.0%  t __ZN2v88internal12_GLOBAL__N_155IterativelyExecuteAndFinalizeUnoptimizedCompilationJobsEPNS0_7IsolateENS0_6HandleINS0_18SharedFunctionInfoEEENS4_INS0_6ScriptEEEPNS0_9ParseInfoEPNS0_19AccountingAllocatorEPNS0_15IsCompiledScopeEPNSt3__16vectorINS0_34FinalizeUnoptimizedCompilationDataENSF_9allocatorISH_EEEE
+      1    0.0%    0.0%  t __ZN2v88internal12_GLOBAL__N_124ProbeInstantiationsCacheEPNS0_7IsolateENS0_6HandleINS0_13NativeContextEEEiNS1_11CachingModeE
+      1    0.0%    0.0%  t __ZN2v88internal12_GLOBAL__N_115ConstructBufferEPNS0_7IsolateENS0_6HandleINS0_10JSFunctionEEENS4_INS0_10JSReceiverEEENS4_INS0_6ObjectEEENS0_15InitializedFlagE
+      1    0.0%    0.0%  t __ZN2v88internal11StringShape33DispatchToSpecificTypeWithoutCastIZNS1_22DispatchToSpecificTypeIZNS0_6String3GetEiE19StringGetDispatchertJRiEEET0_S4_DpOT1_E17CastingDispatchertJRS4_S6_EEES7_SA_
+      1    0.0%    0.0%  t __ZN2v88internal10JSFunction22ResetIfBytecodeFlushedENS_4base8OptionalINSt3__18functionIFvNS0_10HeapObjectENS0_14FullObjectSlotES6_EEEEE
+      1    0.0%    0.0%  t __ZN2v84base19TemplateHashMapImplIPvS2_NS0_18KeyEqualityMatcherIS2_EENS_8internal20ZoneAllocationPolicyEE6ResizeES6_
+      1    0.0%    0.0%  T std::__1::basic_ostream<char, std::__1::char_traits<char> >::operator<<(unsigned short)
+      1    0.0%    0.0%  T std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >::get(wchar_t&)
+      1    0.0%    0.0%  T std::__1::__get_sp_mut(void const*)
+      1    0.0%    0.0%  T node::loader::ModuleWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::errors::TryCatchScope::~TryCatchScope()
+      1    0.0%    0.0%  T node::crypto::SecureContext::SetCipherSuites(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::crypto::NodeBIO::PeekWritable(unsigned long*)
+      1    0.0%    0.0%  T node::InternalCallbackScope::Close()
+      1    0.0%    0.0%  T node::BufferValue::BufferValue(v8::Isolate*, v8::Local<v8::Value>)
+      1    0.0%    0.0%  T _vm_region_recurse_64
+      1    0.0%    0.0%  T _ungetc
+      1    0.0%    0.0%  T _setaudit
+      1    0.0%    0.0%  T _recvfrom
+      1    0.0%    0.0%  T _inet_nsap_ntoa
+      1    0.0%    0.0%  T _fprintf_l
+      1    0.0%    0.0%  T __kernelrpc_thread_policy
+      1    0.0%    0.0%  T ___sinit
+      1    0.0%    0.0%  T ___rec_open
+      1    0.0%    0.0%  T ___pthread_init
+      1    0.0%    0.0%  T ___carbon_delete
+      1    0.0%    0.0%  T __ZNK2v88internal8Variable22IsGlobalObjectPropertyEv
+      1    0.0%    0.0%  T __ZNK2v88internal10Expression15IsNumberLiteralEv
+      1    0.0%    0.0%  T __ZNK2v86String9WriteUtf8EPNS_7IsolateEPciPii
+      1    0.0%    0.0%  T __ZNK2v85Value10IsFunctionEv
+      1    0.0%    0.0%  T __ZNK2v85Array6LengthEv
+      1    0.0%    0.0%  T __ZN2v88internal9Accessors23FunctionPrototypeGetterENS_5LocalINS_4NameEEERKNS_20PropertyCallbackInfoINS_5ValueEEE
+      1    0.0%    0.0%  T __ZN2v88internal9Accessors18StringLengthGetterENS_5LocalINS_4NameEEERKNS_20PropertyCallbackInfoINS_5ValueEEE
+      1    0.0%    0.0%  T __ZN2v88internal8Compiler7CompileENS0_6HandleINS0_18SharedFunctionInfoEEENS1_18ClearExceptionFlagEPNS0_15IsCompiledScopeE
+      1    0.0%    0.0%  T __ZN2v88internal8Compiler7CompileENS0_6HandleINS0_10JSFunctionEEENS1_18ClearExceptionFlagEPNS0_15IsCompiledScopeE
+      1    0.0%    0.0%  T __ZN2v88internal5Scope6LookupILNS1_15ScopeLookupModeE1EEEPNS0_8VariableEPNS0_13VariableProxyEPS1_S8_S8_b
+      1    0.0%    0.0%  T __ZN2v88internal5Scope6LookupILNS1_15ScopeLookupModeE0EEEPNS0_8VariableEPNS0_13VariableProxyEPS1_S8_S8_b
+      1    0.0%    0.0%  T __ZN2v88internal34Builtin_StringPrototypeLastIndexOfEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal33Builtin_TypedArrayPrototypeBufferEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal28Builtin_ObjectDefinePropertyEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal25Builtin_ArrayBufferIsViewEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal16DeclarationScopeC2EPNS0_4ZoneEPNS0_15AstValueFactoryENS0_8REPLModeE
+      1    0.0%    0.0%  T __ZN2v88internal15FunctionLiteral17set_inferred_nameENS0_6HandleINS0_6StringEEE
+      1    0.0%    0.0%  T __ZN2v88internal15AstValueFactory9GetStringEjbNS0_6VectorIKhEE
+      1    0.0%    0.0%  T __ZN2v88internal12ArrayLiteral27BuildBoilerplateDescriptionINS0_7IsolateEEEvPT_
+      1    0.0%    0.0%  T __ZN2v88internal11VariableMap7DeclareEPNS0_4ZoneEPNS0_5ScopeEPKNS0_12AstRawStringENS0_12VariableModeENS0_12VariableKindENS0_18InitializationFlagENS0_17MaybeAssignedFlagENS0_12IsStaticFlagEPb
+      1    0.0%    0.0%  T __ZN2v87Isolate17GetCurrentContextEv
+      1    0.0%    0.0%  T __ZN2v811HandleScopeC1EPNS_7IsolateE
+
+ [Summary]:
+   ticks  total  nonlib   name
+     48    2.3%    2.4%  JavaScript
+   1954   94.6%   96.1%  C++
+    155    7.5%    7.6%  GC
+     32    1.5%          Shared libraries
+     32    1.5%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    796   52.2%   38.5%  t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+    677   44.4%   32.8%  T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+     14    0.9%    0.7%  T __ZN2v88internal17Builtin_JsonParseEiPmPNS0_7IsolateE
+      5    0.3%    0.2%  T ___telemetry
+      5    0.3%    0.2%  T __ZN2v88internal34Builtin_StringPrototypeLastIndexOfEiPmPNS0_7IsolateE
+      5    0.3%    0.2%  T __ZN2v88internal28Builtin_ObjectDefinePropertyEiPmPNS0_7IsolateE
+      3    0.2%    0.1%  t node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.1%    0.1%  T _mach_port_extract_member
+      2    0.1%    0.1%  T _kpersona_info
+      1    0.1%    0.0%  t node::task_queue::RunMicrotasks(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.0%  t node::inspector::(anonymous namespace)::InspectorConsoleCall(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.0%  t node::fs::GetReqWrap(v8::FunctionCallbackInfo<v8::Value> const&, int, bool)
+      1    0.1%    0.0%  t node::crypto::CreateNativeKeyObjectClass(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.0%  t node::ArrayBufferViewContents<char, 64ul>::Read(v8::Local<v8::ArrayBufferView>)
+      1    0.1%    0.0%  t _szone_malloc_should_clear
+      1    0.1%    0.0%  T node::options_parser::GetOptions(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.0%  T node::BufferValue::BufferValue(v8::Isolate*, v8::Local<v8::Value>)
+      1    0.1%    0.0%  T _recvfrom
+      1    0.1%    0.0%  T __ZNK2v86String9WriteUtf8EPNS_7IsolateEPciPii
+      1    0.1%    0.0%  T __ZN2v88internal33Builtin_TypedArrayPrototypeBufferEiPmPNS0_7IsolateE
+      1    0.1%    0.0%  T __ZN2v88internal30Builtin_ObjectDefinePropertiesEiPmPNS0_7IsolateE
+      1    0.1%    0.0%  T __ZN2v88internal29Builtin_ReflectDefinePropertyEiPmPNS0_7IsolateE
+      1    0.1%    0.0%  T __ZN2v88internal25Builtin_ArrayBufferIsViewEiPmPNS0_7IsolateE
+      1    0.1%    0.0%  T __ZN2v88internal23Builtin_DateConstructorEiPmPNS0_7IsolateE
+      1    0.1%    0.0%  T __ZN2v87Isolate17GetCurrentContextEv
+      1    0.1%    0.0%  T __ZN2v811HandleScopeC1EPNS_7IsolateE
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    785   38.0%  t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+    299   38.1%    t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+     33   11.0%      t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+      9   27.3%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:240:21
+      9  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:271:26
+      6   66.7%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      3   33.3%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      3    9.1%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      3  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      3  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      2    6.1%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      2  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      2  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      2    6.1%        LazyCompile: *<anonymous> internal/per_context/primordials.js:23:10
+      2  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:271:26
+      1   50.0%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      1   50.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      1    3.0%        LazyCompile: ~wrapSafe internal/modules/cjs/loader.js:964:18
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      1    3.0%        LazyCompile: ~updateRsNoPrimaryFromMember /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology_description.js:312:37
+      1  100.0%          LazyCompile: ~update /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology_description.js:120:11
+      1  100.0%            LazyCompile: ~serverUpdateHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology.js:379:24
+      1    3.0%        LazyCompile: ~unfqdn tls.js:140:16
+      1  100.0%          LazyCompile: ~checkServerIdentity tls.js:221:59
+      1  100.0%            LazyCompile: ~onConnectSecure _tls_wrap.js:1483:25
+      1    3.0%        LazyCompile: ~stat internal/modules/cjs/loader.js:132:14
+      1  100.0%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      1  100.0%            LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+      1    3.0%        LazyCompile: ~splitRoot fs.js:1613:33
+      1  100.0%          LazyCompile: ~realpathSync fs.js:1650:22
+      1  100.0%            LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      1    3.0%        LazyCompile: ~resolve path.js:973:10
+      1  100.0%          LazyCompile: *readPackageScope internal/modules/cjs/loader.js:271:26
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      1    3.0%        LazyCompile: ~pathtoRegexp /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/path-to-regexp/index.js:28:22
+      1  100.0%          LazyCompile: ~Layer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/express/lib/router/layer.js:33:15
+      1  100.0%            LazyCompile: ~route /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/express/lib/router/index.js:491:29
+      1    3.0%        LazyCompile: ~path /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/socket.io/dist/index.js:112:9
+      1  100.0%          LazyCompile: ~Server /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/socket.io/dist/index.js:48:16
+      1  100.0%            LazyCompile: ~ioServer /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/services/socket.js:44:25
+      1    3.0%        LazyCompile: ~parse /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bytes/index.js:137:15
+      1  100.0%          LazyCompile: ~json /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/body-parser/lib/types/json.js:50:15
+      1  100.0%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/services/server.js:1:1
+      1    3.0%        LazyCompile: ~getOwn internal/bootstrap/loaders.js:153:16
+      1  100.0%          LazyCompile: ~syncExports internal/bootstrap/loaders.js:258:14
+      1  100.0%            LazyCompile: ~<anonymous> internal/bootstrap/loaders.js:244:15
+      1    3.0%        LazyCompile: ~get /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/get.js:8:30
+      1  100.0%          LazyCompile: ~Mongoose._applyPlugins /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/index.js:619:44
+      1  100.0%            LazyCompile: ~Mongoose.model /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/index.js:458:36
+      1    3.0%        LazyCompile: ~clone /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/clone.js:31:15
+      1  100.0%          LazyCompile: ~cloneObject /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/clone.js:110:21
+      1  100.0%            LazyCompile: ~clone /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/clone.js:31:15
+      1    3.0%        LazyCompile: ~checkServer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:138:21
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:222:12
+      1  100.0%            LazyCompile: ~executeAndReschedule /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:815:34
+      1    3.0%        LazyCompile: ~Socket.connect net.js:927:36
+      1  100.0%          LazyCompile: ~connect _tls_wrap.js:1556:35
+      1  100.0%            LazyCompile: ~makeConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:227:24
+      1    3.0%        LazyCompile: ~Faker /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/index.js:24:16
+      1  100.0%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    3.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/pluralize.js:86:34
+      1  100.0%          t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+      1  100.0%            LazyCompile: ~pluralize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/pluralize.js:82:19
+      1    3.0%        LazyCompile: *realpathSync fs.js:1650:22
+      1  100.0%          LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      1  100.0%            LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+     15    5.0%      LazyCompile: ~getOptions internal/fs/utils.js:284:20
+     15  100.0%        LazyCompile: ~readFileSync fs.js:374:22
+     15  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+     13   86.7%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      2   13.3%            LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+     15    5.0%      LazyCompile: *realpathSync fs.js:1650:22
+      9   60.0%        LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      9  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      7   77.8%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      2   22.2%            LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+      6   40.0%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      6  100.0%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      6  100.0%            LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+     12    4.0%      LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+     12  100.0%        LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+     12  100.0%          LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      2   16.7%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/hr/address/index.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/deps.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/iconv-lite/lib/index.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/uk/name/index.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/ko/address/index.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/it/address/index.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/fr_CA/internet/index.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/es_MX/index.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/en/finance/credit_card/index.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales.js:1:1
+      1    8.3%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/express/lib/router/layer.js:1:1
+      9    3.0%      LazyCompile: *resolve path.js:973:10
+      6   66.7%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:240:21
+      6  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:271:26
+      5   83.3%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      1   16.7%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      2   22.2%        LazyCompile: *realpathSync fs.js:1650:22
+      1   50.0%          LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      1  100.0%            LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      1   50.0%          LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1   11.1%        LazyCompile: *readPackageScope internal/modules/cjs/loader.js:271:26
+      1  100.0%          LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      1  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      7    2.3%      LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      6   85.7%        LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      6  100.0%          LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      6  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      1   14.3%        LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+      1  100.0%          LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      1  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      6    2.0%      LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      6  100.0%        LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      6  100.0%          LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+      4   66.7%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      2   33.3%            LazyCompile: ~tryPackage internal/modules/cjs/loader.js:288:20
+      6    2.0%      LazyCompile: *readPackage internal/modules/cjs/loader.js:240:21
+      5   83.3%        LazyCompile: *readPackageScope internal/modules/cjs/loader.js:271:26
+      4   80.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      2   50.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      2   50.0%            LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+      1   20.0%          LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      1  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1   16.7%        LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:271:26
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      1  100.0%            LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+      5    1.7%      LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:271:26
+      4   80.0%        LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      4  100.0%          LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+      4  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      1   20.0%        LazyCompile: ~shouldUseESMLoader internal/modules/run_main.js:23:28
+      1  100.0%          LazyCompile: ~executeUserEntryPoint internal/modules/run_main.js:65:31
+      1  100.0%            Eval: ~<anonymous> internal/main/run_main_module.js:1:1
+      5    1.7%      LazyCompile: ~deserialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/deserializer.js:24:21
+      5  100.0%        LazyCompile: ~deserialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/bson.js:156:21
+      4   80.0%          LazyCompile: ~parse /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/commands.js:577:10
+      4  100.0%            LazyCompile: ~messageHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:421:35
+      1   20.0%          LazyCompile: ~parse /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/commands.js:384:10
+      1  100.0%            LazyCompile: ~messageHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:421:35
+      4    1.3%      LazyCompile: ~nextTick internal/process/task_queues.js:101:18
+      3   75.0%        LazyCompile: ~onwrite internal/streams/writable.js:394:17
+      3  100.0%          LazyCompile: ~processIncomingData /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      3  100.0%            LazyCompile: ~_write /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:26:11
+      1   25.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection_pool.js:456:32
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection_pool.js:363:39
+      1  100.0%            LazyCompile: ~callback /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:48:31
+      4    1.3%      LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      2   50.0%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      2  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      1   50.0%            LazyCompile: ~executeUserEntryPoint internal/modules/run_main.js:65:31
+      1   50.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      2   50.0%        LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+      2  100.0%          LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      2  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      4    1.3%      LazyCompile: *readPackageScope internal/modules/cjs/loader.js:271:26
+      2   50.0%        LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      2  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      2  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      2   50.0%        LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      2  100.0%          LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      2  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      3    1.0%      LazyCompile: ~realpathSync fs.js:1650:22
+      3  100.0%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      2   66.7%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      2  100.0%            LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+      1   33.3%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      1  100.0%            LazyCompile: ~resolveMainPath internal/modules/run_main.js:8:25
+      3    1.0%      LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      3  100.0%        LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      3  100.0%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/ko/address/index.js:1:1
+      3  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      3    1.0%      LazyCompile: *readFileSync fs.js:374:22
+      3  100.0%        LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      2   66.7%          LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      2  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      1   33.3%          LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+      1  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+     14    1.8%    T __ZN2v88internal17Builtin_JsonParseEiPmPNS0_7IsolateE
+      7   50.0%      LazyCompile: ~Module._extensions..json internal/modules/cjs/loader.js:1097:39
+      7  100.0%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      7  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      7  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      6   42.9%      LazyCompile: ~readPackage internal/modules/cjs/loader.js:240:21
+      6  100.0%        LazyCompile: ~resolveExports internal/modules/cjs/loader.js:422:24
+      6  100.0%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      6  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1    7.1%      LazyCompile: *readPackage internal/modules/cjs/loader.js:240:21
+      1  100.0%        LazyCompile: ~resolveExports internal/modules/cjs/loader.js:422:24
+      1  100.0%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+     13    1.7%    LazyCompile: *realpathSync fs.js:1650:22
+     10   76.9%      LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+     10  100.0%        LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+     10  100.0%          LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+      8   80.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      2   20.0%            LazyCompile: ~tryPackage internal/modules/cjs/loader.js:288:20
+      3   23.1%      LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      3  100.0%        LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      3  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      3  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+     12    1.5%    LazyCompile: ~readPackage internal/modules/cjs/loader.js:240:21
+     11   91.7%      LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:271:26
+      7   63.6%        LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      7  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      7  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      4   36.4%        LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      4  100.0%          LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      4  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      1    8.3%      LazyCompile: ~tryPackage internal/modules/cjs/loader.js:288:20
+      1  100.0%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+     11    1.4%    LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+     11  100.0%      LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+     11  100.0%        LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema/decimal128.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/model.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/update/castArrayFilters.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/operations/connect.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/ja/phone_number/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/it/name/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/id_ID/company/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/hr/name/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/es/cell_phone/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/en_IND/address/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1    9.1%          Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      9    1.1%    LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      9  100.0%      LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      9  100.0%        LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+      7   77.8%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      7  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      2   22.2%          LazyCompile: ~tryPackage internal/modules/cjs/loader.js:288:20
+      1   50.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      1   50.0%            LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      9    1.1%    LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      9  100.0%      LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      9  100.0%        LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      9  100.0%          LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      9  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      8    1.0%    LazyCompile: ~Module internal/modules/cjs/loader.js:149:16
+      8  100.0%      LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      8  100.0%        LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      8  100.0%          LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      3   37.5%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/fa/company/index.js:1:1
+      1   12.5%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/index.js:1:1
+      1   12.5%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/ko/index.js:1:1
+      1   12.5%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/id_ID/address/index.js:1:1
+      1   12.5%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/fa/index.js:1:1
+      1   12.5%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/express/node_modules/debug/src/index.js:1:1
+      8    1.0%    LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      8  100.0%      LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      5   62.5%        LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      5  100.0%          LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      5  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      3   37.5%        LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+      3  100.0%          LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      3  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+
+    461   22.3%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+    461  100.0%    T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+    461  100.0%      LazyCompile: ~wrapSafe internal/modules/cjs/loader.js:964:18
+    461  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+    461  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+    423   91.8%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+     38    8.2%            LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+
+    240   11.6%  T ___channel_get_opt
+
+     61    3.0%  T node::native_module::NativeModuleEnv::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     61  100.0%    T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+     61  100.0%      LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+     55   90.2%        LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+      8   14.5%          Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      5    9.1%          Eval: ~<anonymous> crypto.js:1:1
+      5  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      4    7.3%          Eval: ~<anonymous> internal/child_process.js:1:1
+      4  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      4    7.3%          Eval: ~<anonymous> http.js:1:1
+      4  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      3    5.5%          Eval: ~<anonymous> stream.js:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    3.6%          LazyCompile: ~setupBuffer internal/bootstrap/node.js:300:21
+      2  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      2    3.6%          Eval: ~<anonymous> tls.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    3.6%          Eval: ~<anonymous> internal/url.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    3.6%          Eval: ~<anonymous> internal/modules/esm/loader.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    3.6%          Eval: ~<anonymous> events.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      2    3.6%          Eval: ~<anonymous> child_process.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          LazyCompile: ~setupProcessObject internal/bootstrap/node.js:271:28
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      1    1.8%          LazyCompile: ~setupPrepareStackTrace internal/bootstrap/node.js:252:32
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      1    1.8%          LazyCompile: ~lazyLoadStreams fs.js:1994:25
+      1  100.0%            LazyCompile: ~get ReadStream fs.js:2101:17
+      1    1.8%          LazyCompile: ~initializeCJSLoader internal/bootstrap/pre_execution.js:407:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution internal/bootstrap/pre_execution.js:19:36
+      1    1.8%          LazyCompile: ~createGlobalConsole internal/bootstrap/node.js:317:29
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      1    1.8%          Eval: ~<anonymous> zlib.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> tty.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> net.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> internal/util/inspect.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> internal/timers.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> internal/source_map/source_map_cache.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> internal/process/esm_loader.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> internal/modules/esm/get_source.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> internal/modules/cjs/helpers.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> buffer.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> assert.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> _http_common.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> _http_client.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1    1.8%          Eval: ~<anonymous> _http_agent.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      6    9.8%        LazyCompile: ~compileForPublicLoader internal/bootstrap/loaders.js:219:25
+      6  100.0%          LazyCompile: ~loadNativeModule internal/modules/cjs/helpers.js:31:26
+      6  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+
+     57    2.8%  T _munmap
+      2    3.5%    t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+      1   50.0%      LazyCompile: ~wrapfunction /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/index.js:397:23
+      1  100.0%        Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/express/lib/utils.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      1   50.0%      LazyCompile: *realpathSync fs.js:1650:22
+      1  100.0%        LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1  100.0%            LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+
+     32    1.5%  UNKNOWN
+     12   37.5%    LazyCompile: *stat internal/modules/cjs/loader.js:132:14
+      8   66.7%      LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      8  100.0%        LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+      6   75.0%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      6  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      2   25.0%          LazyCompile: ~tryPackage internal/modules/cjs/loader.js:288:20
+      1   50.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      1   50.0%            LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      4   33.3%      LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      4  100.0%        LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      4  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      4  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+     10   31.3%    LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+     10  100.0%      LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      6   60.0%        LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      6  100.0%          LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      6  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      4   40.0%        LazyCompile: *Module._load internal/modules/cjs/loader.js:704:24
+      4  100.0%          LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      4  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      5   15.6%    t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+      1   20.0%      t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+      1  100.0%        LazyCompile: ~stat internal/modules/cjs/loader.js:132:14
+      1  100.0%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      1  100.0%            LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+      1   20.0%      LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      1  100.0%        LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      1  100.0%          LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+      1  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      1   20.0%      LazyCompile: ~isPathPercentEncode /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/percent-encoding.js:65:29
+      1  100.0%        LazyCompile: ~isUserinfoPercentEncode /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/percent-encoding.js:72:33
+      1  100.0%          LazyCompile: ~utf8PercentEncodeCodePointInternal /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/percent-encoding.js:93:44
+      1  100.0%            LazyCompile: ~utf8PercentEncodeCodePoint /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/percent-encoding.js:108:36
+      1   20.0%      LazyCompile: ~checkOut /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection_pool.js:120:13
+      1  100.0%        LazyCompile: ~withConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection_pool.js:249:19
+      1  100.0%          LazyCompile: ~command /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/server.js:133:12
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology.js:213:101
+      1   20.0%      LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      1  100.0%        LazyCompile: ~executeUserEntryPoint internal/modules/run_main.js:65:31
+      1  100.0%          Eval: ~<anonymous> internal/main/run_main_module.js:1:1
+
+     27    1.3%  t node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+     27  100.0%    T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+     27  100.0%      LazyCompile: ~readSync fs.js:555:18
+     24   88.9%        LazyCompile: ~tryReadSync fs.js:362:21
+     24  100.0%          LazyCompile: ~readFileSync fs.js:374:22
+     24  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      3   11.1%        LazyCompile: *readFileSync fs.js:374:22
+      2   66.7%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      2  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+      1   33.3%          LazyCompile: ~Module._extensions..json internal/modules/cjs/loader.js:1097:39
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+
+     22    1.1%  t __ZN2v88internal12StringHasher20HashSequentialStringIhEEjPKT_iy
+     22  100.0%    t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+      6   27.3%      LazyCompile: *realpathSync fs.js:1650:22
+      5   83.3%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      5  100.0%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      5  100.0%            LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:350:23
+      1   16.7%        LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      4   18.2%      t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+      1   25.0%        LazyCompile: ~realpathSync fs.js:1650:22
+      1  100.0%          LazyCompile: ~toRealPath internal/modules/cjs/loader.js:343:20
+      1  100.0%            LazyCompile: ~tryFile internal/modules/cjs/loader.js:334:17
+      1   25.0%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:240:21
+      1  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:271:26
+      1  100.0%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      1   25.0%        LazyCompile: ~read internal/modules/package_json_reader.js:16:14
+      1  100.0%          LazyCompile: *readPackage internal/modules/cjs/loader.js:240:21
+      1  100.0%            LazyCompile: ~tryPackage internal/modules/cjs/loader.js:288:20
+      1   25.0%        LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      3   13.6%      LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:444:28
+      3  100.0%        LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      3  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      3  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      2    9.1%      LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      2  100.0%        LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      2  100.0%          LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      1   50.0%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/bulk/common.js:1:1
+      1   50.0%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/locales/fr_CH/index.js:1:1
+      2    9.1%      LazyCompile: *readPackage internal/modules/cjs/loader.js:240:21
+      2  100.0%        LazyCompile: *readPackageScope internal/modules/cjs/loader.js:271:26
+      2  100.0%          LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      2  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1    4.5%      LazyCompile: ~parseCertString internal/tls.js:10:25
+      1  100.0%        LazyCompile: ~translatePeerCertificate _tls_common.js:311:69
+      1  100.0%          LazyCompile: ~translatePeerCertificate _tls_common.js:311:69
+      1  100.0%            LazyCompile: ~translatePeerCertificate _tls_common.js:311:69
+      1    4.5%      LazyCompile: ~createCollection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/db.js:143:21
+      1  100.0%        LazyCompile: ~createCollection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:398:82
+      1  100.0%          LazyCompile: ~Connection.onOpen /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:626:39
+      1  100.0%            LazyCompile: ~_setClient /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:825:20
+      1    4.5%      LazyCompile: *readPackageScope internal/modules/cjs/loader.js:271:26
+      1  100.0%        LazyCompile: ~trySelf internal/modules/cjs/loader.js:391:17
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      1    4.5%      LazyCompile: *Module._findPath internal/modules/cjs/loader.js:444:28
+      1  100.0%        LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      1  100.0%            LazyCompile: ~Module.require internal/modules/cjs/loader.js:944:36
+      1    4.5%      Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/index.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+
+     21    1.0%  T _mprotect
+     17   81.0%    t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+      2   11.8%      t __ZN2v88internal12_GLOBAL__N_132InsertCodeIntoOptimizedCodeCacheEPNS0_24OptimizedCompilationInfoE
+      1   50.0%        LazyCompile: ~matchesParentDomain /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/connection_string.js:32:29
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/connection_string.js:55:54
+      1  100.0%            LazyCompile: ~onresolve dns.js:198:19
+      1   50.0%        LazyCompile: ~Kareem.filter /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/kareem/index.js:324:35
+      1  100.0%          LazyCompile: ~applyHooks /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/model/applyHooks.js:32:20
+      1  100.0%            LazyCompile: ~compile /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/model.js:4726:33
+      1    5.9%      LazyCompile: ~writeU_Int32LE internal/buffer.js:687:24
+      1  100.0%        LazyCompile: ~writeInt32LE internal/buffer.js:857:22
+      1  100.0%          LazyCompile: ~toBin /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/commands.js:496:10
+      1  100.0%            LazyCompile: ~writeCommand /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:35:17
+      1    5.9%      LazyCompile: ~promiseOrCallback /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/promiseOrCallback.js:8:44
+      1  100.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:558:18
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/model.js:1350:52
+      1  100.0%            LazyCompile: ~promiseOrCallback /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/promiseOrCallback.js:8:44
+      1    5.9%      LazyCompile: ~prepare /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:16:12
+      1  100.0%        LazyCompile: ~prepareHandshakeDocument /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:128:34
+      1  100.0%          LazyCompile: ~performInitialHandshake /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:47:33
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:16:29
+      1    5.9%      LazyCompile: ~onresolve dns.js:198:19
+      1    5.9%      LazyCompile: ~isIP internal/net.js:38:14
+      1  100.0%        LazyCompile: ~parseSslOptions /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:211:25
+      1  100.0%          LazyCompile: ~makeConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:227:24
+      1  100.0%            LazyCompile: ~connect /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:15:17
+      1    5.9%      LazyCompile: ~exports.setup /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URL.js:49:17
+      1  100.0%        LazyCompile: ~URL /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URL.js:88:16
+      1  100.0%          LazyCompile: ~URLWithoutHost /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb-connection-string-url/lib/index.js:54:1
+      1  100.0%            LazyCompile: ~ConnectionString /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb-connection-string-url/lib/index.js:62:16
+      1    5.9%      LazyCompile: ~db /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/mongo_client.js:165:7
+      1  100.0%        LazyCompile: ~_setClient /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:825:20
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:785:20
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:518:13
+      1    5.9%      LazyCompile: ~continueScramConversation /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:85:75
+      1  100.0%          LazyCompile: ~messageHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:421:35
+      1  100.0%            LazyCompile: ~emit events.js:264:44
+      1    5.9%      LazyCompile: ~compile /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/model.js:4726:33
+      1  100.0%        LazyCompile: ~Mongoose._model /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/index.js:522:37
+      1  100.0%          LazyCompile: ~Mongoose.model /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/index.js:458:36
+      1  100.0%            Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/models/productschema.js:1:1
+      1    5.9%      LazyCompile: ~afterWriteTick internal/streams/writable.js:451:24
+      1  100.0%        LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:65:35
+      1    5.9%      LazyCompile: ~addChunk internal/streams/readable.js:299:18
+      1  100.0%        LazyCompile: ~readableAddChunk internal/streams/readable.js:231:26
+      1  100.0%          LazyCompile: ~Readable.push internal/streams/readable.js:222:35
+      1  100.0%            LazyCompile: ~writeCommand /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:35:17
+      1    5.9%      LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:796:35
+      1  100.0%        LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+      1  100.0%          LazyCompile: ~executeUserEntryPoint internal/modules/run_main.js:65:31
+      1  100.0%            Eval: ~<anonymous> internal/main/run_main_module.js:1:1
+      1    5.9%      LazyCompile: ~Connection.onOpen /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:626:39
+      1  100.0%        LazyCompile: ~_setClient /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:825:20
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:785:20
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:518:13
+      1    5.9%      LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/model.js:1265:5
+      1  100.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/model.js:1272:23
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/model.js:4918:15
+      1  100.0%            LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:65:35
+      1    5.9%      Eval: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/routes/products.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1017:37
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1072:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:916:33
+

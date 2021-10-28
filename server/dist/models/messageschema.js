@@ -9,4 +9,4 @@ var messagesSchema = new mongoose_1.Schema({
     date: { type: String, required: true, max: 100 },
     time: { type: String, required: true, max: 100 },
 }, { versionKey: false });
-exports.messages = (0, mongoose_1.model)(messagesCollection, messagesSchema);
+exports.messages = mongoose_1.model(messagesCollection, messagesSchema);

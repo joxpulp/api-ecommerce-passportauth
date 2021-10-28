@@ -13,4 +13,4 @@ var productsSchema = new mongoose_1.Schema({
     },
     thumbnail: { type: String, required: true, max: 100 },
 }, { versionKey: false });
-exports.products = (0, mongoose_1.model)(productsCollection, productsSchema);
+exports.products = mongoose_1.model(productsCollection, productsSchema);

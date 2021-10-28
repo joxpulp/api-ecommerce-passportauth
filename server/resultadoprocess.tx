@@ -1,0 +1,886 @@
+Statistical profiling result from resultadosprof.log, (2434 ticks, 20 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   2001   82.2%          /usr/local/bin/node
+    123    5.1%          /usr/lib/system/libsystem_kernel.dylib
+     67    2.8%          /usr/lib/system/libsystem_pthread.dylib
+     54    2.2%          /usr/lib/system/libsystem_c.dylib
+     30    1.2%          /usr/lib/system/libsystem_malloc.dylib
+     27    1.1%          /usr/lib/libc++.1.dylib
+     21    0.9%          /usr/lib/system/libsystem_platform.dylib
+      4    0.2%          /usr/lib/libc++abi.dylib
+      1    0.0%          /usr/lib/system/libsystem_notify.dylib
+      1    0.0%          /usr/lib/system/libdyld.dylib
+      1    0.0%          /usr/lib/libobjc.A.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     22    0.9%   21.2%  LazyCompile: *resolve node:path:1091:10
+     10    0.4%    9.6%  LazyCompile: *realpathSync node:fs:2408:22
+      9    0.4%    8.7%  LazyCompile: *normalizeString node:path:66:25
+      3    0.1%    2.9%  LazyCompile: *dirname node:path:1275:10
+      3    0.1%    2.9%  Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      3    0.1%    2.9%  Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      2    0.1%    1.9%  LazyCompile: *readPackage node:internal/modules/cjs/loader:290:21
+      2    0.1%    1.9%  LazyCompile: *Module._nodeModulePaths node:internal/modules/cjs/loader:629:37
+      2    0.1%    1.9%  Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2    0.1%    1.9%  Function: ^importModuleDynamicallyWrap node:internal/vm/module:435:37
+      2    0.1%    1.9%  Function: ^compileFunction node:vm:308:25
+      2    0.1%    1.9%  Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    0.0%    1.0%  RegExp: ^((?:@[^/\\%]+\/)?[^./\\%][^/\\%]*)(\/.*)?$
+      1    0.0%    1.0%  RegExp: (?:^|\/)\.?\.$
+      1    0.0%    1.0%  LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      1    0.0%    1.0%  LazyCompile: *basename node:path:1306:11
+      1    0.0%    1.0%  LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1    0.0%    1.0%  Function: ^validateString node:internal/validators:117:24
+      1    0.0%    1.0%  Function: ^toPathIfFileURL node:internal/url:1496:25
+      1    0.0%    1.0%  Function: ^stringToFlags node:internal/fs/utils:555:23
+      1    0.0%    1.0%  Function: ^resolve node:path:1091:10
+      1    0.0%    1.0%  Function: ^realpathSync node:fs:2408:22
+      1    0.0%    1.0%  Function: ^openSync node:fs:576:18
+      1    0.0%    1.0%  Function: ^multiplication32 /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/vendor/mersenne.js:88:29
+      1    0.0%    1.0%  Function: ^internalBinding node:internal/bootstrap/loaders:164:45
+      1    0.0%    1.0%  Function: ^getOptionValue node:internal/options:32:24
+      1    0.0%    1.0%  Function: ^get node:net:1706:6
+      1    0.0%    1.0%  Function: ^closeSync node:fs:526:19
+      1    0.0%    1.0%  Function: ^Module node:internal/modules/cjs/loader:172:16
+      1    0.0%    1.0%  Function: ^<anonymous> node:internal/validators:83:3
+      1    0.0%    1.0%  Function: ^<anonymous> node:internal/validators:72:3
+      1    0.0%    1.0%  Function: ^<anonymous> node:internal/validators:190:40
+      1    0.0%    1.0%  Function: ^<anonymous> node:internal/validators:167:39
+      1    0.0%    1.0%  Function: ^<anonymous> node:internal/fs/utils:668:38
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+     84    3.5%   80.8%  JavaScript
+      0    0.0%    0.0%  C++
+     43    1.8%   41.3%  GC
+   2330   95.7%          Shared libraries
+     20    0.8%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   2001   82.2%  /usr/local/bin/node
+   1716   85.8%    /usr/local/bin/node
+   1021   59.5%      Function: ^compileFunction node:vm:308:25
+    942   92.3%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+    941   99.9%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+    921   97.9%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     20    2.1%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     70    6.9%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+     70  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     70  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+     92    5.4%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     71   77.2%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+     14   19.7%          Function: ~<anonymous> node:crypto:1:1
+     14  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      9   12.7%          Function: ~<anonymous> node:http:1:1
+      9  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      7    9.9%          Function: ~<anonymous> node:tty:1:1
+      7  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5    7.0%          Function: ~<anonymous> node:tls:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5    7.0%          Function: ~<anonymous> node:internal/child_process:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      5    7.0%          Function: ~<anonymous> node:_http_client:1:1
+      5  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    4.2%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      3  100.0%            LazyCompile: ~get node:crypto:287:8
+      3    4.2%          Function: ~<anonymous> node:child_process:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.8%          LazyCompile: ~lazyLoadStreams node:fs:2841:25
+      2  100.0%            LazyCompile: ~get ReadStream node:fs:2984:17
+      2    2.8%          Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.8%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.8%          Function: ~<anonymous> node:internal/cluster/primary:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.8%          Function: ~<anonymous> node:https:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.8%          Function: ~<anonymous> node:assert:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.8%          Function: ~<anonymous> node:_tls_common:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          LazyCompile: ~get node:dns:334:8
+      1  100.0%            /usr/local/bin/node
+      1    1.4%          Function: ~<anonymous> node:internal/blocklist:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:_http_server:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.4%          Function: ~<anonymous> node:_http_common:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     19   20.7%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+     19  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+     19  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2    2.2%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      2  100.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1   50.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1   50.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     47    2.7%      /usr/local/bin/node
+     12   25.5%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+     12  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      7   58.3%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      4   33.3%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1    8.3%            LazyCompile: ~trySelf node:internal/modules/cjs/loader:441:17
+      9   19.1%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      9  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      9  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3    6.4%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      3  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      3  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      2    4.3%        Function: ^compileFunction node:vm:308:25
+      2  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      2  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      2    4.3%        Function: ^Module node:internal/modules/cjs/loader:172:16
+      2  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      2    4.3%        Function: ^FastBuffer node:internal/buffer:958:14
+      2  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1   50.0%            Function: ^createPool node:buffer:150:20
+      1   50.0%            Function: ^allocate node:buffer:397:18
+      2    4.3%        Function: ^<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/pluralize.js:86:34
+      2  100.0%          /usr/local/bin/node
+      2  100.0%            LazyCompile: ~pluralize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/pluralize.js:82:19
+      1    2.1%        LazyCompile: ~shouldUseNative /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/object-assign/index.js:21:25
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/object-assign/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.1%        LazyCompile: ~path /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/socket.io/dist/index.js:112:9
+      1  100.0%          LazyCompile: ~Server /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/socket.io/dist/index.js:48:16
+      1  100.0%            LazyCompile: ~ioServer /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/services/socket.js:44:25
+      1    2.1%        LazyCompile: ~parse node:url:168:37
+      1  100.0%          LazyCompile: ~urlParse node:url:152:18
+      1  100.0%            LazyCompile: ~OAuth2Strategy /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/passport-oauth2/lib/strategy.js:77:24
+      1    2.1%        LazyCompile: ~isIPv6 node:internal/net:35:16
+      1  100.0%          LazyCompile: ~isIP node:internal/net:39:14
+      1  100.0%            LazyCompile: ~parseSslOptions /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:211:25
+      1    2.1%        LazyCompile: ~getESMFacade node:internal/bootstrap/loaders:264:15
+      1  100.0%          LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1  100.0%            LazyCompile: ~loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1    2.1%        LazyCompile: ~deserializeObject /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/deserializer.js:53:27
+      1  100.0%          LazyCompile: ~deserialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/deserializer.js:24:21
+      1  100.0%            LazyCompile: ~deserialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/bson.js:156:21
+      1    2.1%        LazyCompile: ~Monitor /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:39:16
+      1  100.0%          LazyCompile: ~Server /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/server.js:28:16
+      1  100.0%            LazyCompile: ~createAndConnectServer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology.js:546:32
+      1    2.1%        LazyCompile: ~MongoStore /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/connect-mongo/build/main/lib/MongoStore.js:75:16
+      1  100.0%          LazyCompile: ~create /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/connect-mongo/build/main/lib/MongoStore.js:135:18
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/services/server.js:1:1
+      1    2.1%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/pluralize.js:86:34
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~pluralize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/pluralize.js:82:19
+      1    2.1%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1    2.1%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/socket.io/dist/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.1%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/browserDocument.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.1%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.1%        Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1    2.1%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+     43    2.5%      Function: ^stat node:internal/modules/cjs/loader:151:14
+     23   53.5%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+     23  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+     20   87.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      3   13.0%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+     20   46.5%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+     19   95.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+     19  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    5.0%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     32    1.9%      LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     32  100.0%        LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      6   18.8%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:422:29
+      6  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      5   15.6%          Function: ~<anonymous> node:internal/modules/esm/loader:1:1
+      5  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      4   12.5%          Function: ~<anonymous> node:internal/modules/esm/load:1:1
+      4  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      4   12.5%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      3    9.4%          Function: ~<anonymous> node:internal/process/esm_loader:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    9.4%          Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.1%          LazyCompile: ~initializeSourceMapsHandlers node:internal/bootstrap/pre_execution:461:38
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1    3.1%          LazyCompile: ~initializeReport node:internal/bootstrap/pre_execution:183:26
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1    3.1%          Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.1%          Function: ~<anonymous> node:internal/modules/esm/module_map:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.1%          Function: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.1%          Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    3.1%          Function: ~<anonymous> node:internal/bootstrap/pre_execution:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     29    1.7%      LazyCompile: *realpathSync node:fs:2408:22
+     19   65.5%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+     19  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+     19  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+     10   34.5%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+     10  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      5   50.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      5   50.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+     26    1.5%      Function: ^readSync node:fs:684:18
+     25   96.2%        Function: ^tryReadSync node:fs:429:21
+     25  100.0%          Function: ^readFileSync node:fs:450:22
+     23   92.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    4.0%            LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1158:39
+      1    4.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/saslprep/lib/memory-code-points.js:1:1
+      1    3.8%        LazyCompile: *readFileSync node:fs:450:22
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+     27    1.3%    LazyCompile: *compileFunction node:vm:308:25
+     27  100.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     27  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+     27  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     27  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+
+    123    5.1%  /usr/lib/system/libsystem_kernel.dylib
+     38   30.9%    /usr/local/bin/node
+      3    7.9%      /usr/local/bin/node
+      1   33.3%        LazyCompile: ~isIPv4 node:internal/net:31:16
+      1  100.0%          LazyCompile: ~isIP node:internal/net:39:14
+      1  100.0%            LazyCompile: ~lookupAndConnect node:net:995:26
+      1   33.3%        LazyCompile: ~config /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/dotenv/lib/main.js:82:17
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/config/config.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1   33.3%        Function: ^compileFunction node:vm:308:25
+      1  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.6%      LazyCompile: ~wrapConversion /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/args/node_modules/color-convert/route.js:63:24
+      1  100.0%        LazyCompile: ~module.exports /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/args/node_modules/color-convert/route.js:78:27
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/args/node_modules/color-convert/index.js:61:25
+      1  100.0%            /usr/local/bin/node
+      1    2.6%      LazyCompile: ~value node:internal/console/constructor:320:20
+      1  100.0%        LazyCompile: ~log node:internal/console/constructor:358:6
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/index.js:25:60
+      1    2.6%      LazyCompile: ~urlencoded /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/body-parser/lib/types/urlencoded.js:43:21
+      1  100.0%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/services/server.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.6%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:11:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1    2.6%      LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:254:26
+      1  100.0%        LazyCompile: ~makeConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:227:24
+      1  100.0%          LazyCompile: ~connect /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:15:17
+      1  100.0%            LazyCompile: ~checkServer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:138:21
+      1    2.6%      LazyCompile: ~serializeInto /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/serializer.js:549:23
+      1  100.0%        LazyCompile: ~serialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/bson.js:105:19
+      1  100.0%          LazyCompile: ~toBin /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/commands.js:82:10
+      1  100.0%            LazyCompile: ~writeCommand /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:35:17
+      1    2.6%      LazyCompile: ~serialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/bson.js:105:19
+      1  100.0%        LazyCompile: ~toBin /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/commands.js:82:10
+      1  100.0%          LazyCompile: ~writeCommand /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:35:17
+      1  100.0%            LazyCompile: ~write /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:488:15
+      1    2.6%      LazyCompile: ~resolve node:path:1091:10
+      1  100.0%        LazyCompile: ~Module._initPaths node:internal/modules/cjs/loader:1227:29
+      1  100.0%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:422:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1    2.6%      LazyCompile: ~readFileSync node:fs:450:22
+      1  100.0%        LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%          LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1    2.6%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.6%      LazyCompile: ~ok node:assert:410:12
+      1  100.0%        LazyCompile: ~store.set /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/promise_provider.js:36:21
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/promise_provider.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.6%      LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%        LazyCompile: ~immediate /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/immediate.js:12:36
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:566:34
+      1  100.0%            LazyCompile: ~promiseOrCallback /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/promiseOrCallback.js:8:44
+      1    2.6%      LazyCompile: ~makeInterruptibleAsyncInterval /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:760:40
+      1  100.0%        LazyCompile: ~connect /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:79:12
+      1  100.0%          LazyCompile: ~connect /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/server.js:85:12
+      1  100.0%            LazyCompile: ~createAndConnectServer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology.js:546:32
+      1    2.6%      LazyCompile: ~isDate /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/utils.js:82:16
+      1  100.0%        LazyCompile: ~serializeInto /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/serializer.js:549:23
+      1  100.0%          LazyCompile: ~serialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/bson.js:105:19
+      1  100.0%            LazyCompile: ~toBin /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/commands.js:82:10
+      1    2.6%      LazyCompile: ~initSocketHandle node:net:254:26
+      1  100.0%        LazyCompile: ~Socket node:net:283:16
+      1  100.0%          LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1    2.6%      LazyCompile: ~fileURLToPath node:internal/url:1413:23
+      1  100.0%        LazyCompile: ~finalizeEsmResolution node:internal/modules/cjs/loader:939:31
+      1  100.0%          Function: ^resolveExports node:internal/modules/cjs/loader:472:24
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1    2.6%      LazyCompile: ~createTopology /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/operations/connect.js:53:24
+      1  100.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/operations/connect.js:41:62
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/connection_string.js:72:39
+      1  100.0%            LazyCompile: ~onresolve node:dns:207:19
+      1    2.6%      LazyCompile: ~Writable node:internal/streams/writable:219:18
+      1  100.0%        Function: ^Duplex node:internal/streams/duplex:52:16
+      1  100.0%          LazyCompile: ~MessageStream /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:21:16
+      1  100.0%            LazyCompile: ~Connection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:37:16
+      1    2.6%      LazyCompile: ~TopologyDescription /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology_description.js:28:16
+      1  100.0%        LazyCompile: ~update /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology_description.js:120:11
+      1  100.0%          LazyCompile: ~serverUpdateHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology.js:379:24
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology.js:552:53
+      1    2.6%      LazyCompile: ~Socket._read node:net:596:34
+      1  100.0%        LazyCompile: ~<anonymous> node:net:601:26
+      1  100.0%          LazyCompile: ~onceWrapper node:events:504:21
+      1  100.0%            Function: ^emit node:events:340:44
+      1    2.6%      LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%        LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%          LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.6%      LazyCompile: ~Module._extensions..json node:internal/modules/cjs/loader:1158:39
+      1  100.0%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1    2.6%      LazyCompile: ~Mime.define /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mime/mime.js:21:34
+      1  100.0%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mime/mime.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.6%      LazyCompile: ~Long.isLong /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/long.js:236:28
+      1  100.0%        LazyCompile: ~Long.equals /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/long.js:427:38
+      1  100.0%          LazyCompile: ~Long.eq /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/long.js:435:34
+      1  100.0%            LazyCompile: ~Long.negate /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/long.js:612:38
+      1    2.6%      LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/utils.js:454:18
+      1  100.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/promiseOrCallback.js:10:23
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:518:13
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/operations/execute_operation.js:48:47
+      1    2.6%      Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1    2.6%      Function: ~<anonymous> node:internal/crypto/util:1:1
+      1  100.0%        Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1    2.6%      Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema/array.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.6%      Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/express/lib/router/route.js:1:1
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.6%      Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/connect-mongo/build/main/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.6%      Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/long.js:44:36
+      1  100.0%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/long.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.6%      Function: ^parseOptions /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/connection_string.js:205:22
+      1  100.0%        LazyCompile: ~MongoClient /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/mongo_client.js:60:16
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:776:31
+      1  100.0%            /usr/local/bin/node
+      1    2.6%      Function: ^getOptionsFromBinding node:internal/options:18:31
+      1  100.0%        Function: ^getOptionValue node:internal/options:32:24
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.6%      Function: ^findLongestRegisteredExtension node:internal/modules/cjs/loader:413:40
+      1  100.0%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1    2.6%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%        LazyCompile: *compileFunction node:vm:308:25
+      1  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      9    7.3%    LazyCompile: *compileFunction node:vm:308:25
+      9  100.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      9  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      9  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      9  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      7    5.7%    LazyCompile: *realpathSync node:fs:2408:22
+      5   71.4%      Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      5  100.0%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      4   80.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      4  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      1   20.0%          Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2   28.6%      LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   50.0%          LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      1   50.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      3    2.4%    LazyCompile: *readFileSync node:fs:450:22
+      3  100.0%      Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      3  100.0%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      3  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+
+     67    2.8%  /usr/lib/system/libsystem_pthread.dylib
+     47   70.1%    /usr/local/bin/node
+      3    6.4%      LazyCompile: ~realpathSync node:fs:2408:22
+      3  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      3  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      3  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:11:25
+      3    6.4%      /usr/local/bin/node
+      1   33.3%        LazyCompile: ~callSiteToString /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/lib/compat/index.js:21:76
+      1  100.0%          LazyCompile: ~get /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/lib/compat/index.js:54:16
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/index.js:1:1
+      1   33.3%        LazyCompile: ~MongoStore /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/connect-mongo/build/main/lib/MongoStore.js:75:16
+      1  100.0%          LazyCompile: ~create /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/connect-mongo/build/main/lib/MongoStore.js:135:18
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/services/server.js:1:1
+      1   33.3%        Function: ^allocUnsafe node:buffer:372:42
+      1  100.0%          Function: ^tryCreateBuffer node:fs:414:25
+      1  100.0%            Function: ^readFileSync node:fs:450:22
+      2    4.3%      LazyCompile: ~setupWarningHandler node:internal/bootstrap/pre_execution:142:29
+      2  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      2  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    4.3%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      2  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    4.3%      LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:82:28
+      2  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      2  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      2    4.3%      LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      2  100.0%        LazyCompile: ~immediate /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/immediate.js:12:36
+      2  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:566:34
+      2  100.0%            LazyCompile: ~promiseOrCallback /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/promiseOrCallback.js:8:44
+      2    4.3%      Function: ~<anonymous> node:internal/fs/promises:1:1
+      2  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      2  100.0%            Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1    2.1%      LazyCompile: ~xor /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:197:13
+      1  100.0%        LazyCompile: ~continueScramConversation /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:85:75
+      1  100.0%            LazyCompile: ~messageHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:421:35
+      1    2.1%      LazyCompile: ~writeCommand /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:35:17
+      1  100.0%        LazyCompile: ~write /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:488:15
+      1  100.0%          LazyCompile: ~command /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:161:12
+      1  100.0%            LazyCompile: ~executeScram /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:74:22
+      1    2.1%      LazyCompile: ~value node:internal/console/constructor:320:20
+      1  100.0%        LazyCompile: ~log node:internal/console/constructor:358:6
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/index.js:25:60
+      1    2.1%      LazyCompile: ~value node:internal/console/constructor:299:20
+      1  100.0%        LazyCompile: ~value node:internal/console/constructor:320:20
+      1  100.0%          LazyCompile: ~log node:internal/console/constructor:358:6
+      1  100.0%            /usr/local/bin/node
+      1    2.1%      LazyCompile: ~tryWrapperForImpl /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/utils.js:36:27
+      1  100.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URL.js:353:56
+      1  100.0%          LazyCompile: ~getSameObject /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/utils.js:15:23
+      1  100.0%            LazyCompile: ~get searchParams /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URL.js:346:21
+      1    2.1%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:11:25
+      1  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1    2.1%      LazyCompile: ~selectServer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology.js:281:17
+      1  100.0%        LazyCompile: ~connect /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/topology.js:182:12
+      1  100.0%          LazyCompile: ~createTopology /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/operations/connect.js:53:24
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/operations/connect.js:41:62
+      1    2.1%      LazyCompile: ~resolve node:path:1091:10
+      1  100.0%        LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:82:28
+      1  100.0%          LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.1%      LazyCompile: ~merge /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/mongo_credentials.js:113:17
+      1  100.0%        LazyCompile: ~transform /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/connection_string.js:409:18
+      1  100.0%          LazyCompile: ~setOption /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/connection_string.js:358:19
+      1  100.0%            LazyCompile: ~parseOptions /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/connection_string.js:205:22
+      1    2.1%      LazyCompile: ~get ReadStream node:fs:2984:17
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          Function: ^getOwn node:internal/bootstrap/loaders:180:16
+      1  100.0%            Function: ^syncExports node:internal/bootstrap/loaders:287:14
+      1    2.1%      LazyCompile: ~emit node:events:340:44
+      1  100.0%        LazyCompile: ~checkServer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:138:21
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:222:12
+      1  100.0%            LazyCompile: ~executeAndReschedule /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:815:34
+      1    2.1%      LazyCompile: ~deserialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/deserializer.js:24:21
+      1  100.0%        LazyCompile: ~deserialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/bson.js:156:21
+      1  100.0%          LazyCompile: ~parse /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/commands.js:384:10
+      1  100.0%            LazyCompile: ~messageHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:421:35
+      1    2.1%      LazyCompile: ~debug node:internal/util/debuglog:76:15
+      1  100.0%        LazyCompile: ~logger node:internal/util/debuglog:96:18
+      1  100.0%          LazyCompile: ~TLSSocket._init node:_tls_wrap:667:37
+      1  100.0%            LazyCompile: ~TLSSocket node:_tls_wrap:462:19
+      1    2.1%      LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%        LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:133:19
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/finalhandler/node_modules/debug/src/node.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.1%      LazyCompile: ~createHttpErrorConstructor /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/http-errors/index.js:117:37
+      1  100.0%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/http-errors/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.1%      LazyCompile: ~createHash node:crypto:129:20
+      1  100.0%        LazyCompile: ~passwordDigest /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:182:24
+      1  100.0%          LazyCompile: ~continueScramConversation /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:93:35
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:85:75
+      1    2.1%      LazyCompile: ~clearTimeout node:timers:184:22
+      1  100.0%        LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:254:26
+      1  100.0%          LazyCompile: ~connectHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:270:28
+      1  100.0%            Function: ^onceWrapper node:events:504:21
+      1    2.1%      LazyCompile: ~assembleStyles /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/args/node_modules/ansi-styles/index.js:19:24
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    2.1%      LazyCompile: ~_write /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:26:11
+      1  100.0%        LazyCompile: ~writeOrBuffer node:internal/streams/writable:365:23
+      1  100.0%          LazyCompile: ~_write node:internal/streams/writable:283:16
+      1  100.0%            LazyCompile: ~Writable.write node:internal/streams/writable:333:36
+      1    2.1%      LazyCompile: ~_copy node:buffer:200:15
+      1  100.0%        Function: ^copy node:buffer:774:16
+      1  100.0%          Function: ^deserializeObject /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/deserializer.js:53:27
+      1  100.0%            LazyCompile: ~deserialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/deserializer.js:24:21
+      1    2.1%      LazyCompile: ~Schema.path /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:637:33
+      1  100.0%        LazyCompile: ~add /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:472:36
+      1  100.0%          LazyCompile: ~Schema /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:89:16
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/models/productschema.js:1:1
+      1    2.1%      LazyCompile: ~OAuth2Strategy /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/passport-oauth2/lib/strategy.js:77:24
+      1  100.0%        LazyCompile: ~Strategy /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/passport-facebook/lib/strategy.js:48:18
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/middlewares/facebook-auth.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.1%      LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%        LazyCompile: ~Socket node:net:283:16
+      1  100.0%          LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1    2.1%      LazyCompile: ~CreateIndexesOperation /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/operations/indexes.js:70:16
+      1  100.0%        LazyCompile: ~CreateIndexOperation /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/operations/indexes.js:120:16
+      1  100.0%          LazyCompile: ~createIndex /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/collection.js:255:16
+      1  100.0%            LazyCompile: ~setAutoRemove /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/connect-mongo/build/main/lib/MongoStore.js:138:18
+      1    2.1%      LazyCompile: ~Bitfield /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/sparse-bitfield/index.js:5:19
+      1  100.0%        LazyCompile: ~Bitfield /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/sparse-bitfield/index.js:5:19
+      1  100.0%          LazyCompile: ~read /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/saslprep/lib/memory-code-points.js:15:14
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/saslprep/lib/memory-code-points.js:1:1
+      1    2.1%      LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:776:31
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~Connection.openUri /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:670:40
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/index.js:328:49
+      1    2.1%      LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:283:33
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~makeConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:227:24
+      1  100.0%            LazyCompile: ~connect /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:15:17
+      1    2.1%      Function: ~<anonymous> node:internal/modules/cjs/helpers:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1    2.1%      Function: ~<anonymous> node:internal/fs/rimraf:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/fs/promises:1:1
+      1    2.1%      Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/encoding.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.1%      Function: ^emit node:events:340:44
+      1  100.0%        LazyCompile: ~processIncomingData /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      1  100.0%          LazyCompile: ~_write /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/message_stream.js:26:11
+      1  100.0%            LazyCompile: ~writeOrBuffer node:internal/streams/writable:365:23
+     15   22.4%    LazyCompile: *compileFunction node:vm:308:25
+     15  100.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     15  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+     15  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     15  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+
+     54    2.2%  /usr/lib/system/libsystem_c.dylib
+     39   72.2%    /usr/local/bin/node
+      3    7.7%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      3  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      3  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:11:25
+      3  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      3    7.7%      Function: ~<anonymous> node:internal/fs/rimraf:1:1
+      3  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      3  100.0%            Function: ~<anonymous> node:internal/fs/promises:1:1
+      2    5.1%      LazyCompile: ~value node:internal/console/constructor:320:20
+      2  100.0%        LazyCompile: ~log node:internal/console/constructor:358:6
+      2  100.0%          /usr/local/bin/node
+      2  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/index.js:25:60
+      2    5.1%      /usr/local/bin/node
+      1   50.0%        LazyCompile: ~callSiteToString /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/lib/compat/index.js:21:76
+      1  100.0%          LazyCompile: ~get /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/lib/compat/index.js:54:16
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/index.js:1:1
+      1   50.0%        Function: ~<anonymous> node:internal/crypto/keys:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1    2.6%      LazyCompile: ~write /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:488:15
+      1  100.0%        LazyCompile: ~command /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:161:12
+      1  100.0%          LazyCompile: ~checkServer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:138:21
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:222:12
+      1    2.6%      LazyCompile: ~step /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/db/mongoose.js:15:18
+      1  100.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/db/mongoose.js:14:40
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/db/mongoose.js:4:46
+      1  100.0%            /usr/local/bin/node
+      1    2.6%      LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:254:26
+      1  100.0%        LazyCompile: ~makeConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:227:24
+      1  100.0%          LazyCompile: ~connect /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:15:17
+      1  100.0%            LazyCompile: ~checkServer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:138:21
+      1    2.6%      LazyCompile: ~set ismaster /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:75:17
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:73:80
+      1  100.0%            LazyCompile: ~messageHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:421:35
+      1    2.6%      LazyCompile: ~runNextTicks node:internal/process/task_queues:59:22
+      1  100.0%        LazyCompile: ~listOnTimeout node:internal/timers:505:25
+      1  100.0%          LazyCompile: ~processTimers node:internal/timers:485:25
+      1    2.6%      LazyCompile: ~realpathSync node:fs:2408:22
+      1  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:11:25
+      1    2.6%      LazyCompile: ~readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%        LazyCompile: ~shouldUseESMLoader node:internal/modules/run_main:26:28
+      1  100.0%          LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1  100.0%            Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.6%      LazyCompile: ~processTicksAndRejections node:internal/process/task_queues:68:35
+      1    2.6%      LazyCompile: ~patchProcessObject node:internal/bootstrap/pre_execution:82:28
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.6%      LazyCompile: ~noop node:internal/util/debuglog:47:14
+      1  100.0%        LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%          LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%            LazyCompile: ~Module.require node:internal/modules/cjs/loader:997:36
+      1    2.6%      LazyCompile: ~makeConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:227:24
+      1  100.0%        LazyCompile: ~connect /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:15:17
+      1  100.0%          LazyCompile: ~checkServer /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:138:21
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/monitor.js:222:12
+      1    2.6%      LazyCompile: ~insert node:internal/timers:350:16
+      1  100.0%        LazyCompile: ~setUnrefTimeout node:internal/timers:372:25
+      1  100.0%          LazyCompile: ~setStreamTimeout node:internal/stream_base_commons:254:26
+      1  100.0%            LazyCompile: ~makeConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:227:24
+      1    2.6%      LazyCompile: ~forEachCode /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/http-errors/index.js:243:38
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~populateConstructorExports /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/http-errors/index.js:242:37
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/http-errors/index.js:1:1
+      1    2.6%      LazyCompile: ~exports.setup /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URL.js:49:17
+      1  100.0%        LazyCompile: ~URL /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URL.js:88:16
+      1  100.0%          LazyCompile: ~URLWithoutHost /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb-connection-string-url/lib/index.js:54:1
+      1  100.0%            LazyCompile: ~ConnectionString /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb-connection-string-url/lib/index.js:62:16
+      1    2.6%      LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%        LazyCompile: ~getStderr node:internal/bootstrap/switches/is_main_thread:133:19
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/finalhandler/node_modules/debug/src/node.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.6%      LazyCompile: ~createSecureContext node:_tls_common:98:29
+      1  100.0%        LazyCompile: ~connect node:_tls_wrap:1597:35
+      1  100.0%          LazyCompile: ~makeConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:227:24
+      1  100.0%            LazyCompile: ~connect /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:15:17
+      1    2.6%      LazyCompile: ~createConvenienceMethod node:zlib:788:33
+      1  100.0%        Function: ~<anonymous> node:zlib:1:1
+      1  100.0%          Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%            Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1    2.6%      LazyCompile: ~add /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:472:36
+      1  100.0%        LazyCompile: ~Schema /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:89:16
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/models/productschema.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.6%      LazyCompile: ~__extends /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/sift/lib/index.js:30:23
+      1  100.0%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/sift/lib/index.js:135:54
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/sift/lib/index.js:5:19
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/sift/lib/index.js:1:11
+      1    2.6%      LazyCompile: ~Server /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/socket.io/dist/index.js:48:16
+      1  100.0%        LazyCompile: ~ioServer /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/services/socket.js:44:25
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/index.js:1:1
+      1  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.6%      LazyCompile: ~Readable node:internal/streams/readable:181:18
+      1  100.0%        LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%          LazyCompile: ~Socket node:net:283:16
+      1  100.0%            LazyCompile: ~WriteStream node:tty:85:21
+      1    2.6%      LazyCompile: ~Faker /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/lib/index.js:24:16
+      1  100.0%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/faker/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.6%      Function: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            LazyCompile: ~initializeSourceMapsHandlers node:internal/bootstrap/pre_execution:461:38
+      1    2.6%      Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    2.6%      Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1    2.6%      Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%        Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:tls:1:1
+      1    2.6%      Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.6%      Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/middlewares/facebook-auth.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    2.6%      Function: ^readSync node:fs:684:18
+      1  100.0%        Function: ^tryReadSync node:fs:429:21
+      1  100.0%          Function: ^readFileSync node:fs:450:22
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     10   18.5%    LazyCompile: *compileFunction node:vm:308:25
+     10  100.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     10  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+     10  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     10  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+
+     30    1.2%  /usr/lib/system/libsystem_malloc.dylib
+     26   86.7%    /usr/local/bin/node
+      5   19.2%      LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      5  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      5  100.0%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      5  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      4   15.4%      LazyCompile: *realpathSync node:fs:2408:22
+      4  100.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      4  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      4  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      3   11.5%      /usr/local/bin/node
+      1   33.3%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      1  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1   33.3%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      1  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      1  100.0%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1   33.3%        Function: ^FastBuffer node:internal/buffer:958:14
+      1  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      1  100.0%            Function: ^allocate node:buffer:397:18
+      1    3.8%      LazyCompile: ~serializeBoolean /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/serializer.js:93:26
+      1  100.0%        LazyCompile: ~serializeInto /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/parser/serializer.js:549:23
+      1  100.0%          LazyCompile: ~serialize /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/bson/lib/bson.js:105:19
+      1  100.0%            LazyCompile: ~toBin /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/commands.js:82:10
+      1    3.8%      LazyCompile: ~parseAuthority /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/url-state-machine.js:727:71
+      1  100.0%        LazyCompile: ~URLStateMachine /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/url-state-machine.js:473:25
+      1  100.0%          LazyCompile: ~module.exports.basicURLParse /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/url-state-machine.js:1194:41
+      1  100.0%            LazyCompile: ~URLImpl /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URL-impl.js:7:14
+      1    3.8%      LazyCompile: ~module.exports /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/isMongooseObject.js:12:26
+      1  100.0%        LazyCompile: ~clone /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/helpers/clone.js:31:15
+      1  100.0%          LazyCompile: ~Schema.path /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:637:33
+      1  100.0%            LazyCompile: ~add /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:472:36
+      1    3.8%      LazyCompile: ~get /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/lib/compat/index.js:54:16
+      1  100.0%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/index.js:1:1
+      1  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    3.8%      LazyCompile: ~command /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:161:12
+      1  100.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:63:43
+      1  100.0%          LazyCompile: ~prepareHandshakeDocument /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:128:34
+      1  100.0%            LazyCompile: ~performInitialHandshake /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:47:33
+      1    3.8%      LazyCompile: ~add /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:472:36
+      1  100.0%        LazyCompile: ~Schema /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:89:16
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/models/productschema.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    3.8%      LazyCompile: ~Schema.path /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:637:33
+      1  100.0%        LazyCompile: ~Document.$__setSchema /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/document.js:3232:43
+      1  100.0%          LazyCompile: ~compile /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/model.js:4726:33
+      1  100.0%            LazyCompile: ~Mongoose._model /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/index.js:522:37
+      1    3.8%      LazyCompile: ~MongooseError /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/error/mongooseError.js:7:1
+      1  100.0%        LazyCompile: ~MongooseServerSelectionError /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/error/serverSelection.js:26:1
+      1  100.0%          LazyCompile: ~Connection.openUri /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/connection.js:670:40
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/index.js:328:49
+      1    3.8%      LazyCompile: ~IPv4 /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/ipaddr.js/lib/ipaddr.js:57:18
+      1  100.0%        Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/ipaddr.js/lib/ipaddr.js:56:26
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/ipaddr.js/lib/ipaddr.js:1:10
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/ipaddr.js/lib/ipaddr.js:1:1
+      1    3.8%      LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/connection_string.js:72:39
+      1  100.0%        LazyCompile: ~onresolve node:dns:207:19
+      1    3.8%      LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection_pool.js:266:27
+      1  100.0%        LazyCompile: ~handleOperationResult /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/sdam/server.js:315:42
+      1  100.0%          LazyCompile: ~messageHandler /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:421:35
+      1  100.0%            Function: ^emit node:events:340:44
+      1    3.8%      LazyCompile: *stat node:internal/modules/cjs/loader:151:14
+      1  100.0%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      1  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      1  100.0%            Function: ^tryPackage node:internal/modules/cjs/loader:338:20
+      1    3.8%      Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.8%      Function: ^<anonymous> node:vm:313:27
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          Function: ^compileFunction node:vm:308:25
+      1  100.0%            Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      2    6.7%    LazyCompile: *compileFunction node:vm:308:25
+      2  100.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      2  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      2  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      2  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+
+     27    1.1%  /usr/lib/libc++.1.dylib
+     18   66.7%    /usr/local/bin/node
+      2   11.1%      LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      2  100.0%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%          LazyCompile: ~resolveMainPath node:internal/modules/run_main:11:25
+      2  100.0%            LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1    5.6%      LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    5.6%      LazyCompile: ~unenroll node:timers:78:18
+      1  100.0%        LazyCompile: ~clearTimeout node:timers:184:22
+      1  100.0%          LazyCompile: ~reschedule /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:807:24
+      1  100.0%            LazyCompile: ~wake /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:770:18
+      1    5.6%      LazyCompile: ~setupDebugEnv node:internal/bootstrap/pre_execution:194:23
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.6%      LazyCompile: ~route /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/express/lib/router/index.js:491:29
+      1  100.0%        LazyCompile: ~proto.<computed> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/express/lib/router/index.js:508:27
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/routes/products.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    5.6%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    5.6%      LazyCompile: ~onConnectSecure node:_tls_wrap:1516:25
+      1  100.0%        Function: ^emit node:events:340:44
+      1  100.0%          LazyCompile: ~TLSSocket._finishInit node:_tls_wrap:918:43
+      1  100.0%            LazyCompile: ~ssl.onhandshakedone node:_tls_wrap:723:27
+      1    5.6%      LazyCompile: ~howMuchToRead node:internal/streams/readable:377:23
+      1  100.0%        LazyCompile: ~Readable.read node:internal/streams/readable:394:35
+      1  100.0%          LazyCompile: ~flow node:internal/streams/readable:1009:14
+      1  100.0%            LazyCompile: ~resume_ node:internal/streams/readable:985:17
+      1    5.6%      LazyCompile: ~fromString /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:478:22
+      1  100.0%        Function: ^ns /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/utils.js:456:12
+      1  100.0%          LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:63:43
+      1  100.0%            LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/auth/scram.js:25:32
+      1    5.6%      LazyCompile: ~exports.create /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URLSearchParams.js:76:18
+      1  100.0%        LazyCompile: ~exports.createImpl /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URLSearchParams.js:81:22
+      1  100.0%          LazyCompile: ~URLImpl /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URL-impl.js:7:14
+      1  100.0%            LazyCompile: ~exports.setup /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/whatwg-url/dist/URL.js:49:17
+      1    5.6%      LazyCompile: ~command /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connection.js:161:12
+      1  100.0%        LazyCompile: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:63:43
+      1  100.0%          LazyCompile: ~prepareHandshakeDocument /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:128:34
+      1  100.0%            LazyCompile: ~performInitialHandshake /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:47:33
+      1    5.6%      LazyCompile: ~Writable.write node:internal/streams/writable:333:36
+      1  100.0%        LazyCompile: ~value node:internal/console/constructor:257:20
+      1  100.0%          LazyCompile: ~log node:internal/console/constructor:358:6
+      1  100.0%            /usr/local/bin/node
+      1    5.6%      LazyCompile: ~TLSSocket._wrapHandle node:_tls_wrap:594:43
+      1  100.0%        LazyCompile: ~TLSSocket node:_tls_wrap:462:19
+      1  100.0%          LazyCompile: ~connect node:_tls_wrap:1597:35
+      1  100.0%            LazyCompile: ~makeConnection /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongodb/lib/cmap/connect.js:227:24
+      1    5.6%      LazyCompile: ~Schema.defaultOptions /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:416:43
+      1  100.0%        LazyCompile: ~Schema /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/mongoose/lib/schema.js:89:16
+      1  100.0%          Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/dist/models/productschema.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    5.6%      LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%        LazyCompile: ~Socket node:net:283:16
+      1  100.0%          LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1    5.6%      Function: ~<anonymous> node:crypto:1:1
+      1  100.0%        Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      1  100.0%            Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1    5.6%      /usr/local/bin/node
+      1  100.0%        LazyCompile: ~callSiteToString /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/lib/compat/index.js:21:76
+      1  100.0%          LazyCompile: ~get /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/lib/compat/index.js:54:16
+      1  100.0%            Function: ~<anonymous> /Users/josuessd/Documents/BackendProyects/desafio25/server/node_modules/depd/index.js:1:1
+      4   14.8%    LazyCompile: *compileFunction node:vm:308:25
+      4  100.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      4  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      4  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      4  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+

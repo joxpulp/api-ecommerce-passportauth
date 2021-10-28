@@ -8,7 +8,7 @@ var products_1 = __importDefault(require("./products"));
 var messages_1 = __importDefault(require("./messages"));
 var auth_1 = __importDefault(require("./auth"));
 var process_1 = require("../controllers/process");
-var router = (0, express_1.Router)();
+var router = express_1.Router();
 router.use('/productos', products_1.default);
 router.use('/mensajes', messages_1.default);
 router.use('/auth', auth_1.default);

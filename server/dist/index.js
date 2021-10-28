@@ -9,7 +9,7 @@ var config_1 = require("./config/config");
 var cluster_1 = __importDefault(require("cluster"));
 var os_1 = __importDefault(require("os"));
 var CPUs = os_1.default.cpus().length;
-(0, socket_1.ioServer)(server_1.default);
+socket_1.ioServer(server_1.default);
 if (config_1.flags.M === 'CLUSTER' && cluster_1.default.isMaster) {
     console.log("NUMERO DE CPUS ===> " + CPUs);
     console.log("PID MASTER " + config_1.CONFIG.PROCESS_ID);

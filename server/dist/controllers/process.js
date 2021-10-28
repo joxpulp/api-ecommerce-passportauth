@@ -23,7 +23,7 @@ var ProcessController = /** @class */ (function () {
     };
     ProcessController.prototype.randoms = function (req, res) {
         var cant = req.query.cant;
-        res.json({ result: (0, randoms_1.randomNumbers)(Number(cant) || 10000) });
+        res.json({ result: randoms_1.randomNumbers(Number(cant) || 10000) });
     };
     return ProcessController;
 }());

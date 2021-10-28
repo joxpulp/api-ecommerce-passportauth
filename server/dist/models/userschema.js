@@ -82,4 +82,4 @@ userSchema.methods.isValidPassword = function (password) {
         });
     });
 };
-exports.userModel = (0, mongoose_1.model)(userCollection, userSchema);
+exports.userModel = mongoose_1.model(userCollection, userSchema);
