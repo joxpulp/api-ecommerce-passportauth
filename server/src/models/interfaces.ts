@@ -18,7 +18,7 @@ export interface User {
 	email: string;
 	name: string;
 	lastname: string;
-	isValidPassword(password: string): Promise<boolean>
+	isValidPassword(password: string): Promise<boolean>;
 }
 
 export interface ReqUser {
@@ -27,11 +27,19 @@ export interface ReqUser {
 	photos?: object[];
 }
 
-
 declare module 'express-session' {
 	interface Session {
 		loggedIn: boolean;
 		messages: string;
 	}
-	
+}
+
+declare global {
+	namespace Express {
+		interface User {
+			_id?: string;
+			displayName?: string;
+			emails?: [{ value: string }];
+		}
+	}
 }

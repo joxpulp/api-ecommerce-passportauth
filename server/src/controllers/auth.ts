@@ -1,4 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
+import { emailEthereal } from '../services/ethereal';
+
 
 class AuthController {
 	
@@ -10,8 +12,13 @@ class AuthController {
 		}
 	}
 
-	logout(req: Request, res: Response ) {
+	async logout(req: Request, res: Response ) {
 		if (req.user) {
+			await emailEthereal.sendEmail(
+				req.user.emails![0].value,
+				`LOGOUT | ${req.user.displayName}`,
+				'Te deslogeaste'
+			);
 			req.logout();
 			return res.json({ msg: 'Session ended', logged: false });
 		}
@@ -22,3 +29,8 @@ class AuthController {
 }
 
 export const authController = new AuthController();
+
+		
+		
+		
+	;

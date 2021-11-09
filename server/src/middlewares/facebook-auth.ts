@@ -8,6 +8,8 @@ import {
 } from 'passport-facebook';
 import { CONFIG } from '../config/config';
 import { ReqUser } from '../models/interfaces';
+import { emailEthereal } from '../services/ethereal';
+import { emailGmail } from '../services/gmail';
 
 // Select passport strategy
 const facebookStrategy = Strategy;
@@ -21,12 +23,23 @@ const strategyOptions: StrategyOption = {
 };
 
 // Login logic
-const loginFunc = (
+const loginFunc = async (
 	accessToken: string,
 	refreshToken: string,
 	profile: Profile,
 	done: any
-): VerifyFunction => {
+): Promise<VerifyFunction> => {
+	await emailEthereal.sendEmail(
+		profile.emails![0].value,
+		`LOGIN | ${profile.displayName}`,
+		'Te logeaste'
+	);
+	await emailGmail.sendEmail(
+		profile.emails![0].value,
+		`LOGIN | ${profile.displayName}`,
+		'Te logeaste',
+		profile.photos![0].value
+	);
 	return done(null, profile);
 };
 
@@ -39,7 +52,7 @@ passport.serializeUser((user: ReqUser, done) => {
 });
 
 //  Deserialize user by looking to the db with the id and a callback that executes the done.
-passport.deserializeUser((user: string, done) => {
+passport.deserializeUser((user: ReqUser, done) => {
 	done(null, user);
 });
 

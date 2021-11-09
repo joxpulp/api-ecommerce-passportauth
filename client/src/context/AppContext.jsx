@@ -15,7 +15,7 @@ function AppProvider({ children }) {
 	const [fetchIsLogged, setFetchIsLogged] = useState(true);
 	const [fetchLogout, setFetchLogout] = useState(false);
 
-	const URL = 'https://desafio27.herokuapp.com';
+	const URL = 'http://localhost:8080';
 
 	const { data: loginData, setData: setLoginData, loading: loadingLogin } = useFetch(fetchLogin && `${URL}/api/auth/login`, {
 		method: 'POST',

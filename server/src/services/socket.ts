@@ -2,6 +2,7 @@ import * as http from 'http';
 import { Server } from 'socket.io';
 import { products } from '../models/productschema';
 import { messages } from '../models/messageschema';
+import { smsTwilio } from './twilio';
 
 // Socket Server
 export const ioServer = (server: http.Server) => {
@@ -26,6 +27,9 @@ export const ioServer = (server: http.Server) => {
 				try {
 					const newMessage = new messages(message);
 					await newMessage.save();
+					if (message.message.toLowerCase().includes('administrador')) {
+						await smsTwilio.sendMessage(message.email, message.message)
+					}
 				} catch (error) {
 					console.log(error);
 				}

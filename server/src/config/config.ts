@@ -14,7 +14,7 @@ export const flags = args.parse(process.argv)
 
 
 export const CONFIG = {
-	PORT: flags.port || process.env.PORT || 3000,
+	PORT: flags.port || process.env.PORT || 8080,
 	MONGO_URL: process.env.MONGO_URL || 'MONGO-URL ',
 	SECRET: process.env.SECRET || 'mysecret',
 	FB_CLIENT: flags.FB_CLIENT_ID || process.env.FB_CLIENT,
@@ -22,8 +22,17 @@ export const CONFIG = {
 	FB_CALLBACK_URL:
 		process.env.FB_CALLBACK_URL ||
 		'http://localhost:8080/api/auth/facebook-callback',
-	SUCCESS_REDIRECT: process.env.SUCCESS_REDIRECT || 'http://localhost:3000',
+	SUCCESS_REDIRECT: process.env.SUCCESS_REDIRECT || 'http://localhost:3000/#',
 	FAILURE_REDIRECT:
-		process.env.FAILURE_REDIRECT || 'http://localhost:3000/login',
-	PROCESS_ID: process.pid
+		process.env.FAILURE_REDIRECT || 'http://localhost:3000/#/login',
+	PROCESS_ID: process.pid,
+	ETHEREAL_EMAIL: process.env.ETHEREAL_EMAIL || 'email',
+	ETHEREAL_PWD: process.env.ETHEREAL_PWD || 'password',
+	ETHEREAL_NAME: process.env.ETHEREAL_NAME || 'name',
+	GMAIL_EMAIL: process.env.GMAIL_EMAIL || 'email',
+	GMAIL_PWD: process.env.GMAIL_PWD || 'password',
+	GMAIL_NAME: process.env.GMAIL_NAME || 'name',
+	TWILIO_ACCOUNTID: process.env.TWILIO_ACCOUNTID || 'sid',
+	TWILIO_AUTHTOKEN: process.env.TWILIO_AUTHTOKEN || 'secret',
+	TWILIO_PHONE: process.env.TWILIO_PHONE || 'phone',
 };
