@@ -10,6 +10,12 @@ export interface Messages {
 	date: string;
 	time: string;
 }
+export interface Args {
+	id?: string;
+	title?: string;
+	thumbnail?: string;
+	price?: number;
+}
 
 export interface User {
 	_id: string;
