@@ -7,8 +7,8 @@ const router = Router();
 
 router.get('/listar/:id?', productController.getProducts);
 router.get('/vista-test', productController.getProductsTest);
-router.post('/agregar', isAuth, productController.addProduct);
-router.put('/actualizar/:id', isAuth, productController.updateProduct);
-router.delete('/borrar/:id', isAuth, productController.deleteProduct);
+router.post('/agregar',  productController.addProduct);
+router.put('/actualizar/:id', productController.updateProduct);
+router.delete('/borrar/:id', productController.deleteProduct);
 
 export default router;

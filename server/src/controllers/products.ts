@@ -85,21 +85,17 @@ class ProductController {
 			const { id } = req.params;
 			const { title, price, thumbnail } = req.body;
 
-			if (!title || !price || !thumbnail)
-				return res.status(400).json({ error: 'Missing body fields' });
-
-			const item = await products.findByIdAndUpdate(
+			const product = await products.findByIdAndUpdate(
 				id,
 				{ $set: req.body },
 				{ runValidators: true }
 			);
-			if (item === null) {
+			if (product === null) {
 				return res.status(404).json({
 					error: 'Product with this id does not exist',
 				});
 			} else {
-				const updatedProduct = await products.findById(id);
-				return res.json({ updatedProduct });
+				return res.json({ updatedProduct: product });
 			}
 		} catch (error) {
 			if (error instanceof Error) {
@@ -119,13 +115,13 @@ class ProductController {
 					error: 'Product with this id does not exist',
 				});
 			} else {
-				return res.json({ productoBorrado: product });
+				return res.json({ deletedProduct: product });
 			}
 		} catch (error) {
 			if (error instanceof Error) {
 				logger.error(error.message);
 				logger.fatal(error.message);
-				logger.debug('Si hay un error en delete, debe salir este mensaje')
+				logger.debug('Si hay un error en delete, debe salir este mensaje');
 				res.status(500).json({ error: error.message });
 			}
 		}

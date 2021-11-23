@@ -1,4 +1,5 @@
 export interface Products {
+	_id?: string;
 	title: string;
 	price: number;
 	thumbnail: string;
@@ -24,7 +25,7 @@ export interface User {
 	email: string;
 	name: string;
 	lastname: string;
-	isValidPassword(password: string): Promise<boolean>
+	isValidPassword(password: string): Promise<boolean>;
 }
 
 declare module 'express-session' {
@@ -32,5 +33,4 @@ declare module 'express-session' {
 		loggedIn: boolean;
 		messages: string;
 	}
-	
 }
